@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>RAEE ♻ | Contribuir</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .slide-in-left {
+      animation: slideInFromLeft 1.5s ease-in-out;
+    }
+
+    .slide-in-right {
+      animation: slideInFromRight 1.5s ease-in-out;
+    }
+
+    .avatar-hover {
+      transition: border 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .avatar-hover:hover {
+      border: 4px solid transparent;
+      border-image: linear-gradient(to right, rgb(240, 108, 0), rgb(14, 189, 14));
+      border-image-slice: 1;
+      scale: 1.6;
+      transition: ease-in 0.1s cubic-bezier();
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+  <!-- header 1 -->
+  <header class="bg-green-600 text-white p-2 flex flex-col items-center justify-center">
+    <h1 class="text-3xl font-bold">
+      <a href="index.html">RAEE</a>
+    </h1>
+    <button class="md:hidden" id="menu-toggle">
+      <dotlottie-player src="https://lottie.host/6ac3280d-843d-42c3-9e12-c5db152ab977/4bUdqRhN20.json"
+        background="transparent" speed="1" class="w-10 h-10 inline-block align-middle" loop autoplay>
+      </dotlottie-player>
+    </button>
+    <!-- menu 1 -->
+    <div>
+      <nav id="main-nav" class="hidden md:block">
+        <ul class="flex flex-wrap gap-4 md:flex-row md:space-x-4">
+          <li>
+            <a href="index.html" class="block py-2 hover:text-green-200">Inicio</a>
+          </li>
+          <li class="relative group">
+            <button class="block py-2 hover:text-green-200 focus:outline-none">
+              RAEE
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul
+              class="absolute left-0 mt-2 z-50 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="raee.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Historia</a>
+              </li>
+              <li>
+                <a href="reciclaje.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Reciclaje</a>
+              </li>
+              <li>
+                <a href="impacto.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Impacto</a>
+              </li>
+              <li>
+                <a href="residuos.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Residuos</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="campaigns-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Campañas
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="campaigns-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="contribuir.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Contribuir</a>
+              </li>
+              <li>
+                <a href="llebicp.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">LLEBIPC</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="institutions-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Instituciones
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="institutions-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="sena.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Sena</a>
+              </li>
+              <li>
+                <a href="santander.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Gnral
+                  Santander</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="formulario.html" class="block py-2 hover:text-green-200">Preguntas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto mt-8 px-4">
+    <section class="bg-white rounded-lg shadow-md p-6 mb-8 slide-in-left">
+      <h2
+        class="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center">
+        ¿Cómo Puedes Contribuir?
+      </h2>
+      <p class="mb-4">
+        Como parte de nuestra comunidad, puedes contribuir al cuidado del medio
+        ambiente y la gestión adecuada de los RAEE siguiendo estas recomendaciones:
+      </p>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>
+          Entrega tus dispositivos electrónicos en desuso en puntos de recolección
+          autorizados.
+        </li>
+        <li>
+          No tires los RAEE junto con la basura común. Sepáralos para su adecuado
+          tratamiento.
+        </li>
+        <li>
+          Participa en campañas de reciclaje y sensibilización sobre los RAEE.
+        </li>
+        <li>
+          <strong>Eliminación segura de datos:</strong> Antes de desechar cualquier
+          dispositivo, elimina de forma segura todos tus datos personales.
+        </li>
+        <li>
+          <strong>Reducción del consumo:</strong> Opta por productos duraderos y de
+          alta calidad.
+        </li>
+        <li>
+          <strong>Compra responsable:</strong> Apoya a empresas con políticas de
+          responsabilidad ambiental.
+        </li>
+        <li>
+          <strong>Reutilización y donación:</strong> Considera donar dispositivos
+          funcionales.
+        </li>
+      </ul>
+    </section>
+
+    <section class="bg-white rounded-lg shadow-md p-6 mb-8 slide-in-right">
+      <h3
+        class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center">
+        Puntos de Recolección
+      </h3>
+      <p class="mb-4">
+        Contamos con varios puntos de recolección de RAEE ubicados estratégicamente
+        en diversas ciudades:
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <h4 class="font-bold">♻ Cúcuta:</h4>
+          <ul class="list-disc pl-5">
+            <li>Centro Comercial Ventura Plaza</li>
+            <li>Éxito San Mateo</li>
+            <li>Centro Comercial Unicentro Cúcuta</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold">♻ Bogotá:</h4>
+          <ul class="list-disc pl-5">
+            <li>Centro Comercial Santafé</li>
+            <li>Éxito Colina</li>
+            <li>Centro Comercial Gran Estación</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4">
+        Además, realizamos eventos de recolección masiva en fechas especiales.
+        Mantente informado sobre nuestras próximas actividades.
+      </p>
+    </section>
+
+    <section class="bg-white rounded-lg shadow-md p-6 mb-8 fade-in">
+      <h3
+        class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center">
+        Importancia de la Gestión de RAEE
+      </h3>
+      <p class="mb-4">
+        La gestión adecuada de los RAEE es crucial no solo para proteger el medio
+        ambiente sino también para recuperar materiales valiosos. Los dispositivos
+        electrónicos contienen metales preciosos que pueden ser reciclados y
+        reutilizados, reduciendo la necesidad de extraer nuevos recursos.
+      </p>
+      <p>
+        El involucramiento de la comunidad es fundamental. Cada pequeño esfuerzo
+        cuenta y contribuye a un impacto positivo mayor. Desde la simple acción de
+        llevar un dispositivo a un punto de recolección hasta la participación en
+        programas de educación, cada paso nos acerca a un manejo más responsable de
+        los residuos electrónicos.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2
+        class="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center ">
+        CONSEJOS SOBRE EL USO DE LA RAEE
+      </h2>
+      <div style="
+                  position: relative;
+                  padding-bottom: 56.25%;
+                  height: 0;
+                  overflow: hidden;
+                  max-width: 100%;
+                  background: #000;
+                ">
+        <iframe width="100%" height="100%" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+          src="https://www.youtube-nocookie.com/embed/rbWAZZ9IMo4?si=FFpuS71oqihgx0zi&amp;start=9&amp;autoplay=1&amp;controls=0"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  <footer class="bg-green-600 text-white p-8">
+    <footer class="py-8 mb-8">
+      <div class="container mx-auto">
+        <h2 class="text-2xl font-bold text-center mb-6">
+          <p class="text-xl">Juntos por un futuro más sostenible</p>
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- Miembro 1 -->
+          <div class="flex flex-col items-center p-4">
+            <img src="images/avatar_1.png" alt="avatar" class="w-32 h-32 rounded-lg mb-2 avatar-hover" />
+            <p class="text-center font-semibold">ADRIAN DELGADO</p>
+          </div>
+          <!-- Miembro 2 -->
+          <div class="flex flex-col items-center p-4">
+            <img src="images/avatar_2.png" alt="avatar" class="w-32 h-32 rounded-lg mb-2 avatar-hover" />
+            <p class="text-center font-semibold">DANIEL CHAPARRO</p>
+          </div>
+          <!-- Miembro 3 -->
+          <div class="flex flex-col items-center p-4">
+            <img src="images/avatar_4.png" alt="avatar" class="w-32 h-32 rounded-lg mb-2 avatar-hover" />
+            <p class="text-center font-semibold">
+              JHOSMAN GODOY</p>
+          </div>
+          <!-- Miembro 4 -->
+          <div class="flex flex-col items-center p-4">
+            <img src="images/avatar_3.png" alt="avatar" class="w-32 h-32 rounded-lg mb-2 avatar-hover" />
+            <p class="text-center font-semibold">
+              JAIVER CASTRILLO
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="container mx-auto grid md:grid-cols-3 gap-8">
+      <section>
+        <h3 class="text-xl font-bold mb-4">Enlaces de interés</h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="https://www.youtube.com/user/greenpeaceusa" target="_blank" class="hover:text-green-200">Greenpeace
+              USA</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/user/NationalGeographic" target="_blank"
+              class="hover:text-green-200">National Geographic</a>
+          </li>
+          <li>
+            <a href="https://www.ambientum.com/" target="_blank" class="hover:text-green-200">Ambientum</a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3 class="text-xl font-bold mb-4">Más recursos</h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="https://www.epa.gov/recycle/electronics-donation-and-recycling" target="_blank"
+              class="hover:text-green-200">EPA - Electronics Donation and Recycling</a>
+          </li>
+          <li>
+            <a href="https://www.greenpeace.org/global/" target="_blank" class="hover:text-green-200">Greenpeace USA -
+              E-Waste</a>
+          </li>
+          <li>
+            <a href="https://www.unenvironment.org/" target="_blank" class="hover:text-green-200">UN Environment
+              Programme</a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3 class="text-xl font-bold mb-4">Contáctanos</h3>
+        <form id="contact-form" action="https://formsubmit.co/raeeproyecto392@gmail.com" method="POST">
+          <input type="text" name="name" placeholder="Nombre" required class="w-full p-2 mb-2 text-gray-800 rounded" />
+          <input type="email" name="email" placeholder="Correo Electrónico" required
+            class="w-full p-2 mb-2 text-gray-800 rounded" />
+          <textarea name="message" placeholder="Mensaje" rows="3" required
+            class="w-full p-2 mb-2 text-gray-800 rounded"></textarea>
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_next" value="https://raee.vercel.app/thankyou_contact.html">
+          <input type="hidden" name="_autoresponse" value="Gracias por contactarnos">
+          <input type="hidden" name="_template" value="table">
+          <button class="mt-4 border p-2 text-black hover:text-green-900 cursor-pointer" type="submit"
+            class="mt-4">Enviar</button>
+
+
+        </form>
+      </section>
+    </div>
+
+    <footer class="bg-green-600 text-white p-4 mt-12">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 RAEE. Todos los derechos reservados. <a href="https://www.youtube.com/@raeeproyecto-o3i"
+            target="_blank" class="text-green-900 hover:text-red-900">YouTube</a></p>
+      </div>
+    </footer>
+  </footer>
+
+
+  <script src="assets/js/script.js"></script>
+
+</body>

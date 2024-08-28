@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>
+    RAEE ♻ | Manejo de Residuos Eléctricos de Carros Híbridos y Eléctricos en
+    Colombia
+  </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .slide-in-left {
+      animation: slideInFromLeft 1.5s ease-in-out;
+    }
+
+    .slide-in-right {
+      animation: slideInFromRight 1.5s ease-in-out;
+    }
+
+    .flip-card {
+      perspective: 1000px;
+      background-color: transparent;
+      width: 100%;
+      height: 90vh;
+      /* Aumentado para acomodar más contenido */
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      overflow-y: auto;
+      /* Permite desplazamiento vertical si el contenido es muy largo */
+    }
+
+    .flip-card-front {
+      background-color: white;
+      color: black;
+    }
+
+    .flip-card-back {
+      background-color: #2ecc71;
+      color: white;
+      transform: rotateY(180deg);
+    }
+  </style>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+
+<body class="bg-gray-100">
+  <!-- header 1 -->
+  <header class="bg-green-600 text-white p-2 flex flex-col items-center justify-center">
+    <h1 class="text-3xl font-bold">
+      <a href="index.html">RAEE</a>
+    </h1>
+    <button class="md:hidden" id="menu-toggle">
+      <dotlottie-player src="https://lottie.host/6ac3280d-843d-42c3-9e12-c5db152ab977/4bUdqRhN20.json"
+        background="transparent" speed="1" class="w-10 h-10 inline-block align-middle" loop autoplay>
+      </dotlottie-player>
+    </button>
+    <!-- menu 1 -->
+    <div>
+      <nav id="main-nav" class="hidden md:block">
+        <ul class="flex flex-wrap gap-4 md:flex-row md:space-x-4">
+          <li>
+            <a href="index.html" class="block py-2 hover:text-green-200">Inicio</a>
+          </li>
+          <li class="relative group">
+            <button class="block py-2 hover:text-green-200 focus:outline-none">
+              RAEE
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul
+              class="absolute left-0 mt-2 z-50 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="raee.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Historia</a>
+              </li>
+              <li>
+                <a href="reciclaje.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Reciclaje</a>
+              </li>
+              <li>
+                <a href="impacto.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Impacto</a>
+              </li>
+              <li>
+                <a href="residuos.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Residuos</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="campaigns-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Campañas
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="campaigns-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="contribuir.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Contribuir</a>
+              </li>
+              <li>
+                <a href="llebicp.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">LLEBIPC</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="institutions-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Instituciones
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="institutions-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="sena.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Sena</a>
+              </li>
+              <li>
+                <a href="santander.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Gnral
+                  Santander</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="formulario.html" class="block py-2 hover:text-green-200">Preguntas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto mt-36 px-4 grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
+    <div class="flip-card h-full">
+      <div class="flip-card-inner h-full">
+        <div class="flip-card-front p-6 h-full">
+          <h2
+            class="text-2xl font-bold font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center mb-4">
+            Manejo de Residuos Eléctricos de Carros Híbridos y Eléctricos
+          </h2>
+          <p class="mb-4">
+            El manejo de residuos eléctricos de los carros híbridos y eléctricos
+            involucra a varios actores:
+          </p>
+          <ul class="list-disc pl-5 mb-4">
+            <li class="text-balance">
+              <strong>Fabricantes de vehículos:</strong> Muchas compañías
+              automotrices tienen programas de reciclaje y recuperación de baterías
+              y otros componentes eléctricos.
+            </li>
+            <li class="text-balance">
+              <strong>Centros de reciclaje y tratamiento de residuos:</strong>
+              Estos centros están especializados en el manejo y tratamiento de
+              residuos eléctricos y electrónicos.
+            </li>
+            <li class="text-balance">
+              <strong>Empresas de reciclaje de baterías:</strong> Existen compañías
+              especializadas en el reciclaje de baterías de vehículos eléctricos.
+            </li>
+            <li class="text-balance">
+              <strong>Gobiernos y organismos regulatorios:</strong> Los gobiernos
+              establecen regulaciones y directrices para el manejo adecuado de
+              estos residuos.
+            </li>
+            <li class="text-balance">
+              <strong>Consumidores:</strong> Los propietarios de vehículos
+              eléctricos e híbridos también tienen un papel en el manejo adecuado
+              de estos residuos.
+            </li>
+          </ul>
+
+          <h3 class="text-xl font-bold mb-2">En Colombia</h3>
+          <ul class="list-disc pl-5 mb-4">
+            <li class="text-balance">
+              <strong>Fabricantes e importadores:</strong> Según la Resolución 0721
+              de 2021...
+            </li>
+            <li class="text-balance">
+              <strong>Centros de recolección y reciclaje:</strong> Existen centros
+              especializados en el manejo de residuos eléctricos y electrónicos.
+            </li>
+            <li class="text-balance">
+              <strong>Programas de Responsabilidad Extendida del Productor
+                (REP):</strong>
+              Los fabricantes y distribuidores de vehículos eléctricos deben
+              desarrollar programas REP.
+            </li>
+            <li class="text-balance">
+              <strong>Autoridades ambientales:</strong> Entidades como el
+              Ministerio de Ambiente y Desarrollo Sostenible.
+            </li>
+            <li class="text-balance">
+              <strong>Consumidores:</strong> Los propietarios de vehículos
+              eléctricos también tienen la responsabilidad de disponer
+              adecuadamente de las baterías.
+            </li>
+          </ul>
+        </div>
+        <div class="flip-card-back p-6">
+          <h3 class="text-xl font-bold mb-2">Información Adicional</h3>
+          <p class="mb-4">
+            El reciclaje de vehículos eléctricos es crucial para la sostenibilidad.
+            Las baterías contienen materiales valiosos como litio, cobalto y níquel
+            que pueden ser recuperados y reutilizados.
+          </p>
+          <div class="w-full h-80 bg-gray-300 mb-4">
+            <img src="/images/reciclaje.jfif" alt="Reciclaje de baterías" class="w-full h-full object-cover" />
+          </div>
+          <p class="mb-4">
+            El proceso de reciclaje incluye la desmantelación segura, la
+            recuperación de materiales y la disposición adecuada de componentes no
+            reciclables.
+          </p>
+          <p>
+            La gestión adecuada de estos residuos no solo reduce el impacto
+            ambiental, sino que también contribuye a la economía circular,
+            recuperando materiales valiosos para su reutilización en nuevas
+            baterías o en otros productos.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front p-6">
+          <h3
+            class="text-xl font-bold font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center mb-4">
+            Regulaciones</h3>
+          <p class="mb-4">
+            En Colombia, la regulación del manejo de residuos de los carros
+            eléctricos y sus componentes se rige principalmente por la Resolución
+            0721 de 2021 del Ministerio de Ambiente y Desarrollo Sostenible:
+          </p>
+          <ul class="list-disc pl-5 mb-4">
+            <li class="text-balance">
+              <strong>Responsabilidad Extendida del Productor (REP):</strong> Los
+              productores, importadores y comercializadores de baterías de
+              vehículos eléctricos e híbridos deben implementar sistemas de gestión
+              ambiental.
+            </li>
+            <li class="text-balance">
+              <strong>Programas de Gestión:</strong> Los productores y
+              comercializadores deben desarrollar e implementar programas de
+              gestión para la recolección, almacenamiento.
+            </li>
+            <li class="text-balance">
+              <strong>Centros de Recolección y Reciclaje:</strong> Establecimiento
+              de centros autorizados para la recolección y reciclaje de baterías
+              usadas.
+            </li>
+            <li class="text-balance">
+              <strong>Informes y Seguimiento:</strong> Los productores y
+              comercializadores deben presentar informes periódicos sobre la
+              implementación de sus programas de gestión.
+            </li>
+            <li class="text-balance">
+              <strong>Educación y Sensibilización:</strong> Promoción de campañas
+              de educación y sensibilización para informar a los consumidores sobre
+              la correcta disposición de las baterías usadas.
+            </li>
+          </ul>
+
+          <h3 class="text-xl font-bold mb-2">Manejo a Nivel Mundial</h3>
+          <p class="mb-4">
+            A nivel mundial, el manejo de residuos electrónicos está regulado por
+            diferentes legislaciones dependiendo del país.
+          </p>
+
+          <h3 class="text-xl font-bold mb-2">Formas de Reciclaje</h3>
+          <p class="mb-4">
+            Las formas comunes de reciclaje de residuos electrónicos de carros
+            híbridos y eléctricos incluyen la desmantelación controlada de los
+            vehículos.
+          </p>
+        </div>
+        <div class="flip-card-back p-6">
+          <h3 class="text-xl font-bold mb-2">Legislación en Colombia</h3>
+          <p class="mb-4">
+            La Resolución 0721 de 2021 del Ministerio de Ambiente y Desarrollo
+            Sostenible establece las directrices para el manejo de residuos de
+            vehículos eléctricos e híbridos en Colombia.
+          </p>
+          <div class="w-full h-80 bg-gray-300 mb-4">
+            <img src="/images/ambiental.jfif" alt="Legislación ambiental" class="w-full h-full object-cover" />
+          </div>
+          <p class="mb-4">
+            Esta resolución promueve la economía circular y la responsabilidad
+            extendida del productor en la gestión de residuos electrónicos
+            automotrices.
+          </p>
+          <p>Algunos puntos clave de la legislación incluyen:</p>
+          <ul class="list-disc pl-5 mb-4">
+            <li class="text-balance">
+              Establecimiento de metas de recolección y gestión de baterías usadas
+            </li>
+            <li class="text-balance">
+              Creación de sistemas de información para el seguimiento de la gestión
+              de residuos
+            </li>
+            <li class="text-balance">
+              Fomento de la investigación y desarrollo de tecnologías de reciclaje
+            </li>
+            <li class="text-balance">
+              Promoción de la colaboración entre sectores público y privado
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-green-600 text-white p-4 mt-12">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 RAEE. Todos los derechos reservados. <a href="https://www.youtube.com/@raeeproyecto-o3i"
+          target="_blank" class="hover:text-green-200">YouTube - RAEE</a></p>
+    </div>
+  </footer>
+  <script src="assets/js/script.js"></script>
+</body>

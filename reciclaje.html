@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>RAEE ♻ | Reciclaje Local</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+  <style>
+    @keyframes zoom {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .zoom {
+      display: inline-block;
+    }
+
+    .zoom-animate {
+      animation: zoom 0.6s ease-in-out;
+    }
+  </style>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+
+<body class="bg-gray-100">
+  <!-- header 1 -->
+  <header class="bg-green-600 text-white p-2 flex flex-col items-center justify-center">
+    <h1 class="text-3xl font-bold">
+      <a href="index.html">RAEE</a>
+    </h1>
+    <button class="md:hidden" id="menu-toggle">
+      <dotlottie-player src="https://lottie.host/6ac3280d-843d-42c3-9e12-c5db152ab977/4bUdqRhN20.json"
+        background="transparent" speed="1" class="w-10 h-10 inline-block align-middle" loop autoplay>
+      </dotlottie-player>
+    </button>
+    <!-- menu 1 -->
+    <div>
+      <nav id="main-nav" class="hidden md:block">
+        <ul class="flex flex-wrap gap-4 md:flex-row md:space-x-4">
+          <li>
+            <a href="index.html" class="block py-2 hover:text-green-200">Inicio</a>
+          </li>
+          <li class="relative group">
+            <button class="block py-2 hover:text-green-200 focus:outline-none">
+              RAEE
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul
+              class="absolute left-0 mt-2 z-50 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="raee.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Historia</a>
+              </li>
+              <li>
+                <a href="reciclaje.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Reciclaje</a>
+              </li>
+              <li>
+                <a href="impacto.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Impacto</a>
+              </li>
+              <li>
+                <a href="residuos.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Residuos</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="campaigns-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Campañas
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="campaigns-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="contribuir.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Contribuir</a>
+              </li>
+              <li>
+                <a href="llebicp.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">LLEBIPC</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="institutions-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Instituciones
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="institutions-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="sena.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Sena</a>
+              </li>
+              <li>
+                <a href="santander.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Gnral
+                  Santander</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="formulario.html" class="block py-2 hover:text-green-200">Preguntas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto mt-8">
+    <section class="mb-12 text-center">
+      <h2
+        class="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center">
+        Reciclaje Local</h2>
+      <p class="text-xl">
+        El reciclaje de residuos electrónicos o RAEE en un colegio puede brindar
+        numerosas ventajas, beneficios e incluso generar ingresos adicionales.
+      </p>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-8 mb-12">
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3
+          class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center ">
+          Ventajas</h3>
+        <ul class="list-disc list-inside">
+          <li>
+            Preservación del medio ambiente: evita la contaminación del suelo y el
+            agua, y la emisión de gases nocivos.
+          </li>
+          <li>
+            Promoción de la sostenibilidad: fomenta la conservación de recursos
+            naturales.
+          </li>
+          <li>
+            Educación ambiental: brinda la oportunidad de educar a los estudiantes
+            sobre reciclaje y protección ambiental.
+          </li>
+          <li>
+            Imagen positiva: mejora la reputación del colegio frente a la
+            comunidad.
+          </li>
+        </ul>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3
+          class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center ">
+          Beneficios</h3>
+        <ul class="list-disc list-inside">
+          <li>
+            Ahorro de costos: reduce gastos asociados con la eliminación de
+            residuos electrónicos.
+          </li>
+          <li>
+            Reutilización de materiales: recupera materiales valiosos como metales
+            preciosos, plásticos y vidrio.
+          </li>
+          <li>
+            Colaboración con empresas de reciclaje: genera ingresos adicionales a
+            través de acuerdos comerciales.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2
+        class="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center ">
+        Sensibilización sobre los RAEE generados en Colombia
+      </h2>
+      <div style="
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+          ">
+        <iframe width="100%" height="100%" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+          src="https://www.youtube-nocookie.com/embed/xp33wcbtDOY?si=WIfTGFp0regQkgkv&amp;start=5&amp;autoplay=1&amp;controls=0"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="mt-12">
+      <h2
+        class="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center ">
+        Métodos de Reciclaje de Residuos Electrónicos en un Colegio
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">Reutilización y Reparación</h3>
+          <p>
+            No todos los dispositivos electrónicos en desuso son considerados como
+            residuos. En nuestro colegio fomentamos la reutilización y la
+            reparación de equipos electrónicos, estableciendo programas de revisión
+            y reparación.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">Educación y Concientización</h3>
+          <p>
+            Consideramos que la educación y la concientización son fundamentales
+            para promover el reciclaje de residuos electrónicos.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-green-600 text-white p-4 mt-12">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 RAEE ♻. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+
+</body>

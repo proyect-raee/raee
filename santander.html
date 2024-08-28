@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>RAEE ♻ | SANTANDER</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .slide-in-left {
+      animation: slideInFromLeft 1.5s ease-in-out;
+    }
+
+    .slide-in-right {
+      animation: slideInFromRight 1.5s ease-in-out;
+    }
+
+    .circle {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 400px;
+      height: 400px;
+    }
+
+    .bg-mision-vision {
+      background-image: url("images/sena-logo.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bg-mision-vision::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- header 1 -->
+  <header class="bg-green-600 text-white p-2 flex flex-col items-center justify-center">
+    <h1 class="text-3xl font-bold">
+      <a href="index.html">RAEE</a>
+    </h1>
+    <button class="md:hidden" id="menu-toggle">
+      <dotlottie-player src="https://lottie.host/6ac3280d-843d-42c3-9e12-c5db152ab977/4bUdqRhN20.json"
+        background="transparent" speed="1" class="w-10 h-10 inline-block align-middle" loop autoplay>
+      </dotlottie-player>
+    </button>
+    <!-- menu 1 -->
+    <div>
+      <nav id="main-nav" class="hidden md:block">
+        <ul class="flex flex-wrap gap-4 md:flex-row md:space-x-4">
+          <li>
+            <a href="index.html" class="block py-2 hover:text-green-200">Inicio</a>
+          </li>
+          <li class="relative group">
+            <button class="block py-2 hover:text-green-200 focus:outline-none">
+              RAEE
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul
+              class="absolute left-0 mt-2 z-50 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="raee.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Historia</a>
+              </li>
+              <li>
+                <a href="reciclaje.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Reciclaje</a>
+              </li>
+              <li>
+                <a href="impacto.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Impacto</a>
+              </li>
+              <li>
+                <a href="residuos.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Residuos</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="campaigns-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Campañas
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="campaigns-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="contribuir.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Contribuir</a>
+              </li>
+              <li>
+                <a href="llebicp.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">LLEBIPC</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="institutions-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Instituciones
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="institutions-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="sena.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Sena</a>
+              </li>
+              <li>
+                <a href="santander.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Gnral
+                  Santander</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="formulario.html" class="block py-2 hover:text-green-200">Preguntas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto mt-8 px-4 py-8 grid grid-cols-1 md:grid-cols-1 gap-8">
+    <section class="rounded-lg shadow-md p-6 slide-in-left flex bg-white flex flex-col">
+      <h2
+        class="text-2xl font-bold font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 mb-4 uppercase">
+        Institución Educativa General Santander</h2>
+      <div class="content">
+
+        <h2 class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-green-700">
+          Visión</h2>
+        <p class="mb-4">La Institución educativa Colegio General Santander del Municipio de Villa Rosario será
+          reconocida en el año 2024 por ser líder en la prestación del servicio educativo con calidad en la zona de
+          frontera, promoviendo valores de formación integral, respetando los principios de diversidad y vulnerabilidad,
+          posibilitando el desarrollo de competencias laborales claves para la formación de personas con saberes
+          humanistas y tecnológicos, capaces de mejorar su calidad de vida y la de su entorno social.</p>
+        <h2 class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-green-700">
+          Misión</h2>
+        <p class="mb-4">La institución educativa Colegio General Santander es un establecimiento oficial que ofrece y
+          garantiza el servicio social educativo en los niveles de preescolar, básica, media académica y técnica en
+          articulación con Instituciones de Educación Superior a través de programas integrales de formación en
+          competencias laborales, desarrollando los fines y fundamentos de la educación colombiana, formando ciudadanos
+          para la vida en todas sus dimensiones y respetando los principios de diversidad y vulnerabilidad.</p>
+        <h2 class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-green-700">
+          Filosofía</h2>
+        <p class="mb-4">La Institución educativa COLEGIO GENERAL SANTANDER centra su actividad en la formación de un SER
+          HUMANO en el que se integren los valores más significativos del conocimiento, la libertad, la autonomía, el
+          respeto y la defensa de los derechos humanos en el marco del reconocimiento a la diferencia en la forma de
+          pensar, de ser, de sentir de todos los integrantes de la comunidad educativa.</p>
+
+      </div>
+      <hr class="mt-12 p-4" />
+      <h2
+        class="text-2xl font-bold font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 uppercase">
+        HIMNO</h2>
+      <p class="mt-4"><strong>Letra:</strong> Profesor JOSÉ MARÍA PELÁEZ. Rector Colgesan 1971.</p>
+      <p class="mt-4"><strong>Música:</strong> Profesor BENJAMÍN HERRERA.</p>
+      <div class="flex items-center gap-2 flex-wrap m-auto">
+        <div class="flex justify-center flex-col items-center gap-4">
+          <img src="images/logo-general-santander.png" width="200px" height="auto" alt="logo general santander" />
+          <dotlottie-player src="https://lottie.host/cec6c859-daf0-4b51-b16f-9930d4b5ca35/QraiLoIpTQ.json"
+            background="transparent" speed="1" style="width: 300px; height: 300px" direction="1" playMode="normal" loop
+            autoplay></dotlottie-player>
+          <div class="flex space-x-4 mb-4">
+            <button id="play-button"
+              class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-500 flex items-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M14.752 11.168l-6.518 3.76A1 1 0 017 14.507V9.493a1 1 0 011.234-.97l6.518 3.76a1 1 0 010 1.742z">
+                </path>
+              </svg>
+              Play
+            </button>
+            <button id="pause-button"
+              class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500 flex items-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6"></path>
+              </svg>
+              Pause
+            </button>
+          </div>
+        </div>
+        <div class="flex gap-4 justify-center px-8 flex-wrap">
+          <section class="flex mt-2 gap-4 flex-wrap flex-col justify-center items-center">
+            <h2 class="text-xl font-bold mb-2">Coro</h2>
+            <p class="mb-4">Nuestra villa esmaltada de historia<br>
+              Nos reclama el amor del pasado,<br>
+              Un pasado que es timbre de gloria,<br>
+              Del que fuera adalid y soldado.</p>
+
+            <h2 class="text-xl font-bold mb-2">I</h2>
+            <p class="mb-4">Aquí el hombre de leyes levanta<br>
+              Su figura cual regio fanal,<br>
+              Aquí nace, estudia y proclama,<br>
+              Libertad para todo mortal.</p>
+
+            <h2 class="text-xl font-bold mb-2">II</h2>
+            <p class="mb-4">Santander en el libro esperaba<br>
+              Que los hombres buscaran la paz,<br>
+              Y aunque estuvo en guerreras batallas,<br>
+              En la ciencia buscó su ideal.</p>
+
+            <h2 class="text-xl font-bold mb-2">III</h2>
+            <p class="mb-4">Aquí el templo arrulló la semblanza,<br>
+              De las leyes que dan libertad,<br>
+              Aquí nace el gran hombre de patria,<br>
+              De esta patria Colombia inmortal.</p>
+          </section>
+          <section>
+        </div>
+      </div>
+      <audio id="himno-audio" src="videos/himno-santander.mp3"></audio>
+    </section>
+  </main>
+
+  <footer class="bg-green-600 text-white p-4 mt-12">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 RAEE. Todos los derechos reservados. <a href="https://www.youtube.com/@raeeproyecto-o3i"
+          target="_blank" class="hover:text-green-200">YouTube - RAEE</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

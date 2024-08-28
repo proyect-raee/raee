@@ -1,0 +1,429 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+  <title>RAEE ♻ | Preguntas</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .slide-in-left {
+      animation: slideInFromLeft 1.5s ease-in-out;
+    }
+
+    .slide-in-right {
+      animation: slideInFromRight 1.5s ease-in-out;
+    }
+
+    #quizForm {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .question {
+      animation: slideInFromLeft 1.5s ease-in-out;
+      margin-bottom: 1rem;
+    }
+
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.25rem;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    @media (max-width: 768px) {
+      .image-container {
+        order: -1;
+      }
+
+      .image-container dotlottie-player {
+        width: 50%;
+        height: 50%;
+      }
+    }
+  </style>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- header 1 -->
+  <header class="bg-green-600 text-white p-2 flex flex-col items-center justify-center">
+    <h1 class="text-3xl font-bold">
+      <a href="index.html">RAEE</a>
+    </h1>
+    <button class="md:hidden" id="menu-toggle">
+      <dotlottie-player src="https://lottie.host/6ac3280d-843d-42c3-9e12-c5db152ab977/4bUdqRhN20.json"
+        background="transparent" speed="1" class="w-10 h-10 inline-block align-middle" loop autoplay>
+      </dotlottie-player>
+    </button>
+    <!-- menu 1 -->
+    <div>
+      <nav id="main-nav" class="hidden md:block">
+        <ul class="flex flex-wrap gap-4 md:flex-row md:space-x-4">
+          <li>
+            <a href="index.html" class="block py-2 hover:text-green-200">Inicio</a>
+          </li>
+          <li class="relative group">
+            <button class="block py-2 hover:text-green-200 focus:outline-none">
+              RAEE
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul
+              class="absolute left-0 mt-2 z-50 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="raee.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Historia</a>
+              </li>
+              <li>
+                <a href="reciclaje.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Reciclaje</a>
+              </li>
+              <li>
+                <a href="impacto.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Impacto</a>
+              </li>
+              <li>
+                <a href="residuos.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Residuos</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="campaigns-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Campañas
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="campaigns-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="contribuir.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Contribuir</a>
+              </li>
+              <li>
+                <a href="llebicp.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">LLEBIPC</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="institutions-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Instituciones
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="institutions-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="sena.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Sena</a>
+              </li>
+              <li>
+                <a href="santander.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Gnral
+                  Santander</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="formulario.html" class="block py-2 hover:text-green-200">Preguntas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="container mx-auto mt-8 py-12 flex flex-col md:flex-row h-full">
+
+    <!-- Sección de imagen con fondo verde claro -->
+    <div class="w-full md:w-1/2 bg-green-200 md:h-screen flex items-center justify-center image-container">
+      <dotlottie-player src="https://lottie.host/f41cd783-872d-4509-b074-010096b7d866/BXOLUlH3XV.json"
+        background="transparent" speed="0.2" loop autoplay>
+      </dotlottie-player>
+    </div>
+    <!-- Formulario con encabezado fijo -->
+    <div class="w-full md:w-1/2 h-screen overflow-y-auto">
+      <div class="sticky top-0 bg-white z-10 p-4 shadow-md">
+        <h2
+          class="text-2xl font-bold font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center mb-4">
+          Cuestionario sobre RAEE</h2>
+      </div>
+      <div class="p-6">
+        <form action="https://formsubmit.co/raeeproyecto392@gmail.com" method="POST">
+          <div class="question">
+            <p>1. ¿Qué significa el acrónimo "RAEE"?</p>
+            <select name="pregunta_1">
+              <option value="">Seleccione una opción</option>
+              <option value="a">Residuos Ambientales de Energía Eficiente</option>
+              <option value="b">Residuos Aéreos de Energía Eléctrica</option>
+              <option value="c">Residuos de Aparatos Eléctricos y Electrónicos</option>
+              <option value="d">Residuos Asociados a la Energía Eléctrica</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>2. ¿Cuál de los siguientes materiales tóxicos es comúnmente encontrado en los RAEE?</p>
+            <select name="pregunta_2">
+              <option value="">Seleccione una opción</option>
+              <option value="a">Aluminio</option>
+              <option value="b">Plata</option>
+              <option value="c">Mercurio</option>
+              <option value="d">Vidrio</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>4. ¿Qué método de gestión de RAEE es más adecuado para reducir su impacto ambiental?</p>
+            <select name="pregunta_4">
+              <option value="">Seleccione una opción</option>
+              <option value="a"> Reciclar y reutilizar sus componentes</option>
+              <option value="b"> Quemarlos al aire libre</option>
+              <option value="c"> Enterrarlos en vertederos</option>
+              <option value="d"> Exportarlos a otros países</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>5. ¿Cuál es el objetivo principal de la gestión adecuada de los RAEE?</p>
+            <select name="pregunta_5">
+              <option value="">Seleccione una opción</option>
+              <option value="a"> Aumentar la cantidad de residuos electrónicos generados</option>
+              <option value="b"> Reducir el impacto ambiental negativo</option>
+              <option value="c"> Promover el uso indiscriminado de dispositivos electrónicos</option>
+              <option value="d"> Aumentar la exposición a productos tóxicos</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>6. ¿Qué se debe hacer con los RAEE en lugar de desecharlos en la basura común?</p>
+            <select name="pregunta_6">
+              <option value="">Seleccione una opción</option>
+              <option value="a"> Guardarlos en casa indefinidamente</option>
+              <option value="b"> Llevarlos a un punto de reciclaje autorizado</option>
+              <option value="c"> Quemarlos en el jardín</option>
+              <option value="d"> Mezclarlos con residuos orgánicos</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>7. ¿Cuál es el impacto ambiental más grave de la gestión inadecuada de los RAEE?</p>
+            <select name="pregunta_7">
+              <option value="">Seleccione una opción</option>
+              <option value="a"> Contaminación del aire</option>
+              <option value="b"> Aumento de la capa de ozono</option>
+              <option value="c"> Contaminación del suelo y el agua</option>
+              <option value="d"> Disminución del efecto invernadero</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>8. ¿Qué se puede hacer para reducir la cantidad de RAEE generados?</p>
+            <select name="pregunta_8">
+              <option value="">Seleccione una opción</option>
+              <option value="a"> Comprar más dispositivos electrónicos cada año</option>
+              <option value="b"> Deshacerse de los dispositivos electrónicos viejos en la basura</option>
+              <option value="c"> Usar y desechar los dispositivos electrónicos sin consideración</option>
+              <option value="d"> Reparar y mantener los dispositivos electrónicos existentes</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>9. ¿Qué componente de los RAEE puede ser reciclado para recuperar metales valiosos como el oro y la
+              plata?
+            </p>
+            <select name="pregunta_9">
+              <option value="">Seleccione una opción</option>
+              <option value="a"> Plástico</option>
+              <option value="b"> Vidrio</option>
+              <option value="c"> Circuitos impresos</option>
+              <option value="d"> Aluminio</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>10. ¿Por qué es importante la gestión adecuada de los RAEE?</p>
+            <select name="pregunta_10">
+              <option value="">Seleccione una opción</option>
+              <option value="a"> Porque los dispositivos electrónicos son baratos</option>
+              <option value="b"> Porque los RAEE no representan un peligro para la salud humana</option>
+              <option value="c"> Porque los RAEE contienen materiales peligrosos y valiosos</option>
+              <option value="d"> Porque los RAEE son biodegradables</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>11. ¿Qué se debe hacer con los dispositivos electrónicos al final de su vida útil?</p>
+            <select name="pregunta_11">
+              <option value="">Seleccione una opción</option>
+              <option value="a"> Tirarlos en cualquier lugar</option>
+              <option value="b"> Reciclarlos adecuadamente</option>
+              <option value="c"> Quemarlos para obtener energía</option>
+              <option value="d"> Regalarlos a amigos o familiares</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>12. ¿Cuál de las siguientes acciones ayuda a prevenir la generación de RAEE?</p>
+            <select name="pregunta_12">
+              <option value="">Seleccione una opción</option>
+              <option value="a"> Comprar nuevos dispositivos electrónicos con frecuencia</option>
+              <option value="b"> Desechar los dispositivos electrónicos en la basura doméstica</option>
+              <option value="c"> Usar productos electrónicos durante el menor tiempo posible</option>
+              <option value="d"> Reparar y mantener los dispositivos electrónicos existentes</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>13. ¿Qué se puede hacer con los RAEE en lugar de enviarlos a vertederos?</p>
+            <select name="pregunta_13">
+              <option value="">Seleccione una opción</option>
+              <option value="a"> Reciclarlos y reutilizar sus componentes</option>
+              <option value="b"> Quemarlos al aire libre</option>
+              <option value="c"> Exportarlos a otros países</option>
+              <option value="d"> Almacenarlos en casa</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>14. ¿Cuál es uno de los principales riesgos para el medio ambiente asociados con los RAEE?</p>
+            <select name="pregunta_14">
+              <option value="">Seleccione una opción</option>
+              <option value="a"> Reducción de la contaminación del suelo</option>
+              <option value="b"> Aumento de la biodiversidad</option>
+              <option value="c"> Contaminación del aire y el agua</option>
+              <option value="d"> Mejora en la calidad del suelo</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>15. ¿Qué componente de los dispositivos electrónicos puede contener sustancias tóxicas como el plomo y
+              el
+              mercurio?</p>
+            <select name="pregunta_15">
+              <option value="">Seleccione una opción</option>
+              <option value="a"> Pantallas de cristal líquido (LCD)</option>
+              <option value="b"> Teclados y mouse</option>
+              <option value="c"> Cables de alimentación</option>
+              <option value="d"> Carcasas de plástico</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>16. ¿Por qué es importante reciclar los RAEE en lugar de desecharlos en la basura común?</p>
+            <select name="pregunta_16">
+              <option value="">Seleccione una opción</option>
+              <option value="a"> Porque los RAEE no contienen materiales reciclables</option>
+              <option value="b"> Porque los RAEE no representan ningún riesgo para el medio ambiente</option>
+              <option value="c"> Porque los RAEE pueden liberar sustancias tóxicas si no se manejan correctamente
+              </option>
+              <option value="d"> Porque los RAEE son biodegradables</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>17. ¿Qué se puede hacer para evitar la generación de RAEE?</p>
+            <select name="pregunta_17">
+              <option value="">Seleccione una opción</option>
+              <option value="a"> Comprar productos electrónicos de baja calidad</option>
+              <option value="b"> Desechar los dispositivos electrónicos en cualquier lugar</option>
+              <option value="c"> Usar dispositivos electrónicos durante el menor tiempo posible</option>
+              <option value="d"> Reparar y mantener los dispositivos electrónicos existentes</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <p>18. ¿Qué medidas personales tomas para reducir la cantidad de residuos electrónicos que generas en tu día
+              a
+              día?</p>
+            <textarea name="pregunta_18" rows="4"></textarea>
+          </div>
+
+          <div class="question">
+            <p>19. ¿Cuál es tu opinión personal sobre el impacto de los residuos electrónicos en el medio ambiente?</p>
+            <textarea name="pregunta_19" rows="4"></textarea>
+          </div>
+
+          <div class="question">
+            <p>20. ¿Cuál es tu opinión sobre la página web y qué cosas se podrían mejorar?</p>
+            <textarea name="pregunta_20" rows="4"></textarea>
+          </div>
+
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_next" value="https://raee.vercel.app/thankyou.html">
+          <input type="hidden" name="_autoresponse" value="Gracias por responder">
+          <input type="hidden" name="_template" value="table">
+          <button class="mt-4 border p-2 text-black hover:text-green-900 cursor-pointer" type="submit"
+            class="mt-4">Enviar respuestas</button>
+        </form>
+      </div>
+
+    </div>
+
+
+  </main>
+
+  <footer class="bg-green-600 text-white p-4 mt-12">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 RAEE. Todos los derechos reservados. <a href="https://www.youtube.com/@raeeproyecto-o3i"
+          target="_blank" class="hover:text-green-200">YouTube - RAEE</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>

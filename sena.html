@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>RAEE ♻ | SENA</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .slide-in-left {
+      animation: slideInFromLeft 1.5s ease-in-out;
+    }
+
+    .slide-in-right {
+      animation: slideInFromRight 1.5s ease-in-out;
+    }
+
+    .circle {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 400px;
+      height: 400px;
+    }
+
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- header 1 -->
+  <header class="bg-green-600 text-white p-2 flex flex-col items-center justify-center">
+    <h1 class="text-3xl font-bold">
+      <a href="index.html">RAEE</a>
+    </h1>
+    <button class="md:hidden" id="menu-toggle">
+      <dotlottie-player src="https://lottie.host/6ac3280d-843d-42c3-9e12-c5db152ab977/4bUdqRhN20.json"
+        background="transparent" speed="1" class="w-10 h-10 inline-block align-middle" loop autoplay>
+      </dotlottie-player>
+    </button>
+    <!-- menu 1 -->
+    <div>
+      <nav id="main-nav" class="hidden md:block">
+        <ul class="flex flex-wrap gap-4 md:flex-row md:space-x-4">
+          <li>
+            <a href="index.html" class="block py-2 hover:text-green-200">Inicio</a>
+          </li>
+          <li class="relative group">
+            <button class="block py-2 hover:text-green-200 focus:outline-none">
+              RAEE
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul
+              class="absolute left-0 mt-2 z-50 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="raee.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Historia</a>
+              </li>
+              <li>
+                <a href="reciclaje.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Reciclaje</a>
+              </li>
+              <li>
+                <a href="impacto.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Impacto</a>
+              </li>
+              <li>
+                <a href="residuos.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Residuos</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="campaigns-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Campañas
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="campaigns-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="contribuir.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Contribuir</a>
+              </li>
+              <li>
+                <a href="llebicp.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">LLEBIPC</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="institutions-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Instituciones
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="institutions-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="sena.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Sena</a>
+              </li>
+              <li>
+                <a href="santander.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Gnral
+                  Santander</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="formulario.html" class="block py-2 hover:text-green-200">Preguntas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto mt-8 px-4 py-8 grid grid-cols-1 md:grid-cols-1 gap-8">
+    <section
+      class="grid md:grid-cols-2 gap-10 rounded-lg shadow-md bg-green-200 p-10 slide-in-right items-center justify-center">
+      <img width="auto" src="images/sena-logo.png" alt="Sena" class="rounded-lg fade-in">
+      <div class="text-center">
+        <div class="content">
+          <p class="mb-2 font-bold text-xl">
+            "Fortaleciendo el desarrollo social y técnico de Colombia."
+          </p>
+          <div class="content">
+            <h2
+              class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700">
+              Misión</h2>
+            <p class="mb-4">
+              El SENA está encargado de cumplir la función que le corresponde al Estado
+              de invertir en el desarrollo social y técnico de los trabajadores
+              colombianos, ofreciendo y ejecutando la formación profesional integral,
+              para la incorporación y el desarrollo de las personas en actividades
+              productivas que contribuyan al desarrollo social, económico y tecnológico
+              del país (Ley 119/1994).
+            </p>
+            <h2
+              class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700">
+              Visión</h2>
+            <p class="mb-4">
+              Para el año 2026, el Servicio Nacional de Aprendizaje - SENA estará a la
+              vanguardia de la cualificación del talento humano, tanto a nivel nacional
+              como internacional. Esto se logrará a través de la formación profesional
+              integral, el empleo, el emprendimiento y el reconocimiento de
+              aprendizajes previos. Nuestro objetivo es generar valor público y
+              fortalecer la economía campesina, popular, verde y digital, siempre con
+              un enfoque diferencial orientado a la construcción del cambio, la
+              transformación productiva, la soberanía alimentaria y la consolidación de
+              una paz total, materializando así la autonomía territorial, y promoviendo
+              la justicia social, ambiental y económica.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="rounded-lg shadow-md p-6 slide-in-left flex bg-white flex flex-col">
+
+
+
+      <h2
+        class="text-2xl font-bold font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center uppercase mb-12">
+        HIMNO</h2>
+
+      <section class="bg-white">
+
+        <div class="flex justify-center flex-wrap">
+
+          <div class="flex flex-col">
+            <div class="flex space-x-4 mb-4">
+              <button id="play-button-sena"
+                class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-500 flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M14.752 11.168l-6.518 3.76A1 1 0 017 14.507V9.493a1 1 0 011.234-.97l6.518 3.76a1 1 0 010 1.742z">
+                  </path>
+                </svg>
+                Play
+              </button>
+              <button id="pause-button-sena"
+                class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500 flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6"></path>
+                </svg>
+                Pause
+              </button>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold mb-2">Coro</h2>
+              <p class="mb-4">
+                Estudiantes del SENA adelante<br />
+                Por Colombia luchad con amor<br />
+                Con el ánimo noble y radiante<br />
+                Transformémosla en mundo mejor
+              </p>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold mb-2">I</h2>
+              <p class="mb-4">
+                De la patria el futuro destino,<br />
+                en las manos del joven está,<br />
+                el trabajo es seguro camino,<br />
+                que el progreso a Colombia dará.
+              </p>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold mb-2">II</h2>
+              <p class="mb-4">
+                En la forja del SENA se forman,<br />
+                hombres libres que anhelan triunfar,<br />
+                con la ciencia y la técnica unidas,<br />
+                nuevos rumbos de paz trazarán.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-xl font-bold mb-2">III</h2>
+              <p class="mb-4">
+                Hoy la patria nos grita sentida,<br />
+                ¡estudiantes del SENA triunfad!<br />
+                solo así lograréis en la vida,<br />
+                más justicia, mayor libertad.
+              </p>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold mb-2">IV</h2>
+              <p class="mb-4">
+                Avancemos con fuerza guerrera,<br />
+                ¡estudiantes con firme tesón!<br />
+                que la patria en nosotros espera,<br />
+                su pacífica revolución.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="flex flex-col gap-2 mb-4 justify-end items-center">
+          <p class="mt-4">
+            <strong>Letra:</strong> Jesús Briceño y Luis Alfredo Sarmiento.
+          </p>
+          <p class="mt-4"><strong>Música:</strong> Daniel Marles Coro.</p>
+        </div>
+      </section>
+      <section>
+        <audio id="himno-audio-sena" src="videos/himno-sena.mp3"></audio>
+      </section>
+
+  </main>
+
+  <footer class="bg-green-600 text-white p-4 mt-12">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 RAEE. Todos los derechos reservados. <a href="https://www.youtube.com/@raeeproyecto-o3i"
+          target="_blank" class="hover:text-green-200">YouTube - RAEE</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

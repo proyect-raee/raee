@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+  <title>RAEE ♻ | Impacto</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <style>
+    .swiper-container {
+      width: 100%;
+      padding-bottom: 50px;
+    }
+
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .zoomable {
+      transition: transform 0.3s ease;
+    }
+
+    .zoomable:hover {
+      cursor: pointer;
+    }
+
+    .zoomable:active {
+      transform: scale(2.5);
+    }
+  </style>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+
+<body class="bg-gray-100">
+  <!-- header 1 -->
+  <header class="bg-green-600 text-white p-2 flex flex-col items-center justify-center">
+    <h1 class="text-3xl font-bold">
+      <a href="index.html">RAEE</a>
+    </h1>
+    <button class="md:hidden" id="menu-toggle">
+      <dotlottie-player src="https://lottie.host/6ac3280d-843d-42c3-9e12-c5db152ab977/4bUdqRhN20.json"
+        background="transparent" speed="1" class="w-10 h-10 inline-block align-middle" loop autoplay>
+      </dotlottie-player>
+    </button>
+    <!-- menu 1 -->
+    <div>
+      <nav id="main-nav" class="hidden md:block">
+        <ul class="flex flex-wrap gap-4 md:flex-row md:space-x-4">
+          <li>
+            <a href="index.html" class="block py-2 hover:text-green-200">Inicio</a>
+          </li>
+          <li class="relative group">
+            <button class="block py-2 hover:text-green-200 focus:outline-none">
+              RAEE
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul
+              class="absolute left-0 mt-2 z-50 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="raee.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Historia</a>
+              </li>
+              <li>
+                <a href="reciclaje.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Reciclaje</a>
+              </li>
+              <li>
+                <a href="impacto.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Impacto</a>
+              </li>
+              <li>
+                <a href="residuos.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Residuos</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="campaigns-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Campañas
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="campaigns-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="contribuir.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Contribuir</a>
+              </li>
+              <li>
+                <a href="llebicp.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">LLEBIPC</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="institutions-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Instituciones
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="institutions-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="sena.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Sena</a>
+              </li>
+              <li>
+                <a href="santander.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Gnral
+                  Santander</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="formulario.html" class="block py-2 hover:text-green-200">Preguntas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Main -->
+  <main class="container mx-auto mt-8">
+    <section class="mb-12 text-center">
+      <h2
+        class="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center">
+        Impacto</h2>
+      <p class="text-xl">Conozca los impactos ambientales y los beneficios del reciclaje de residuos electrónicos
+        (RAEE).</p>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-8 mb-12">
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3
+          class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center ">
+          Beneficios del Reciclaje de RAEE</h3>
+        <ul class="list-disc list-inside">
+          <li>Reducción de la contaminación ambiental.</li>
+          <li>Aprovechamiento de recursos y materiales valiosos.</li>
+          <li>Prevención de la generación de residuos electrónicos.</li>
+          <li>Contribución a la economía circular.</li>
+          <li>Creación de empleo en la industria del reciclaje.</li>
+          <li>Mejora de la salud pública al reducir la exposición a sustancias peligrosas presentes en los RAEE.</li>
+        </ul>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3
+          class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center ">
+          Normativas y Regulaciones</h3>
+        <p>En [Nombre de la Institución], nos regimos por las normativas y regulaciones locales y nacionales
+          relacionadas con la gestión de RAEE. Cumplimos con los estándares de calidad y seguridad para garantizar un
+          proceso de reciclaje responsable.</p>
+        <p>Además, mantenemos una política de transparencia en nuestras operaciones, brindando informes periódicos
+          sobre nuestras actividades de gestión de RAEE.</p>
+      </div>
+    </section>
+
+    <section class="mb-12 overflow-hidden">
+      <h2
+        class="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center ">
+        Impacto Ambiental</h2>
+      <div class="swiper-container max-w-3xl mx-auto">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide flex flex-col items-center">
+            <img class="zoomable w-64 h-64 object-cover mb-4" src="images/imp-1.jfif" alt="Impacto Ambiental">
+            <div class="text-center">
+              <h3 class="text-xl font-semibold">Impacto Ambiental</h3>
+              <p class="mt-2">El manejo inadecuado de los RAEE puede tener graves consecuencias ambientales.</p>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col items-center">
+            <img class="zoomable w-64 h-64 object-cover mb-4" src="images/imp-2.jfif" alt="Contaminación del suelo">
+            <div class="text-center">
+              <h3 class="text-xl font-semibold">Contaminación del suelo</h3>
+              <p class="mt-2">Los residuos electrónicos a menudo contienen sustancias químicas tóxicas.</p>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col items-center">
+            <img class="zoomable w-64" src="images/imp-3.jfif" alt="Contaminación del agua">
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Contaminación del agua</h3>
+              <p>Los residuos electrónicos mal gestionados pueden filtrar sus químicos tóxicos en las fuentes de agua.
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col items-center">
+            <img class="zoomable w-64" src="images/imp-4.jfif" alt="Contaminación del aire">
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Contaminación del aire</h3>
+              <p>Durante el proceso de descomposición de los residuos electrónicos, pueden liberarse gases tóxicos.
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col items-center">
+            <img class="zoomable w-64" src="images/imp-5.jfif" alt="Acumulación de basura electrónica">
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Acumulación de basura electrónica</h3>
+              <p>La producción masiva y el rápido avance tecnológico conducen a una rápida obsolescencia de los
+                dispositivos electrónicos.</p>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col items-center">
+            <img class="zoomable w-64" src="images/imp-6.jfif" alt="Plomo (Pb)">
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Plomo (Pb)</h3>
+              <p>Presente en soldaduras y revestimientos de cables, el plomo puede afectar el sistema nervioso.</p>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col items-center">
+            <img class="zoomable w-64" src="images/imp-7.jfif" alt="Mercurio (Hg)">
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Mercurio (Hg)</h3>
+              <p>Se encuentra en dispositivos como lámparas fluorescentes y algunos interruptores.</p>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col items-center">
+            <img class="zoomable w-64" src="images/imp-8.jfif" alt="Cadmio (Cd)">
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Cadmio (Cd)</h3>
+              <p>Presente en baterías recargables y en algunos componentes electrónicos, el cadmio puede dañar los
+                riñones.</p>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col items-center">
+            <img class="zoomable w-64" src="images/imp-9.jfif" alt="Cromo hexavalente (Cr(VI))">
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Cromo hexavalente (Cr(VI))</h3>
+              <p>Usado en cromados y en recubrimientos protectores, el cromo hexavalente puede causar cáncer de
+                pulmón.</p>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col items-center">
+            <img class="zoomable w-64" src="images/imp-10.jfif" alt="Bifenilos policlorados (PCB)">
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Bifenilos policlorados (PCB)</h3>
+              <p>Anteriormente utilizados en condensadores y transformadores, los PCB pueden causar daños al sistema
+                inmunológico.</p>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col items-center">
+            <img class="zoomable w-64" src="images/imp-11.jfif" alt="Arsénico (As)">
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Arsénico (As)</h3>
+              <p>Presente en algunos circuitos impresos y semiconductores, el arsénico puede causar cáncer de piel.
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col items-center">
+            <img class="zoomable w-64" src="images/imp-12.jfif" alt="Bario (Ba)">
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Bario (Ba)</h3>
+              <p>Presente en algunos componentes electrónicos, el bario puede causar problemas gastrointestinales.</p>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col items-center">
+            <img class="zoomable w-64" src="images/imp-13.jfif" alt="Antimonio (Sb)">
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Antimonio (Sb)</h3>
+              <p>Utilizado en plásticos retardantes de llama y en algunos circuitos impresos, el antimonio puede
+                causar problemas respiratorios.</p>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col items-center">
+            <img class="zoomable w-64" src="images/imp-14.jfif" alt="Impacto en los ecosistemas">
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Impacto en los ecosistemas</h3>
+              <p>La contaminación causada por los residuos electrónicos puede afectar negativamente a los ecosistemas
+                naturales.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-green-600 text-white p-4 mt-12">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 RAEE ♻. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Swiper('.swiper-container', {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 2,
+          },
+        },
+      });
+    });
+  </script>
+  <script src="assets/js/script.js"></script>
+
+</body>

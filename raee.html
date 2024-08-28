@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>RAEE ♻ | Residuos de Aparatos Eléctricos y Electrónicos</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromLeft {
+      from {
+        transform: translateX(-100%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInFromRight {
+      from {
+        transform: translateX(100%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .slide-in-left {
+      animation: slideInFromLeft 1s ease-out;
+    }
+
+    .slide-in-right {
+      animation: slideInFromRight 1s ease-out;
+    }
+
+    /* Estilos para el modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+    }
+  </style>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+
+<body class="bg-custom min-h-full flex flex-col">
+  <!-- header 1 -->
+  <header class="bg-green-600 text-white p-2 flex flex-col items-center justify-center">
+    <h1 class="text-3xl font-bold">
+      <a href="index.html">RAEE</a>
+    </h1>
+    <button class="md:hidden" id="menu-toggle">
+      <dotlottie-player src="https://lottie.host/6ac3280d-843d-42c3-9e12-c5db152ab977/4bUdqRhN20.json"
+        background="transparent" speed="1" class="w-10 h-10 inline-block align-middle" loop autoplay>
+      </dotlottie-player>
+    </button>
+    <!-- menu 1 -->
+    <div>
+      <nav id="main-nav" class="hidden md:block">
+        <ul class="flex flex-wrap gap-4 md:flex-row md:space-x-4">
+          <li>
+            <a href="index.html" class="block py-2 hover:text-green-200">Inicio</a>
+          </li>
+          <li class="relative group">
+            <button class="block py-2 hover:text-green-200 focus:outline-none">
+              RAEE
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul
+              class="absolute left-0 mt-2 z-50 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="raee.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Historia</a>
+              </li>
+              <li>
+                <a href="reciclaje.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Reciclaje</a>
+              </li>
+              <li>
+                <a href="impacto.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Impacto</a>
+              </li>
+              <li>
+                <a href="residuos.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Residuos</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="campaigns-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Campañas
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="campaigns-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="contribuir.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Contribuir</a>
+              </li>
+              <li>
+                <a href="llebicp.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">LLEBIPC</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group">
+            <button id="institutions-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
+              Instituciones
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="institutions-submenu"
+              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+              <li>
+                <a href="sena.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Sena</a>
+              </li>
+              <li>
+                <a href="santander.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Gnral
+                  Santander</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="formulario.html" class="block py-2 hover:text-green-200">Preguntas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="container mx-auto mt-8">
+    <section class="grid md:grid-cols-2 gap-8 mb-12">
+      <div onclick="toggleCollapse('raee')"
+        class="bg-white p-6 rounded-lg shadow-md slide-in-left shadow-md bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-200 hover:to-green-500 cursor-pointer transition-all duration-300 ease-in-out"
+        style="height: auto; overflow: hidden;">
+        <h3 class="text-2xl font-semibold mb-4 cursor-pointer">¿Qué son los RAEE?</h3>
+        <div id="raee" class="hidden">
+          <p class="mb-4">
+            Los Residuos de Aparatos Eléctricos y Electrónicos (RAEE) son productos
+            eléctricos o electrónicos que han llegado al final de su vida útil.
+            Incluyen desde electrodomésticos grandes hasta dispositivos electrónicos
+            pequeños como teléfonos móviles y computadoras.
+          </p>
+          <div class="w-64 m-auto flex items-center justify-center">
+            <dotlottie-player src="https://lottie.host/39859cc9-c4e4-4d79-844e-cb63694d25ae/nEejilzdgZ.json" speed="1"
+              loop autoplay></dotlottie-player>
+          </div>
+
+        </div>
+      </div>
+      <div onclick="toggleCollapse('responsabilidad')"
+        class="bg-white p-6 rounded-lg shadow-md slide-in-right shadow-md bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-200 hover:to-green-500 cursor-pointer transition-all duration-300 ease-in-out"
+        style="height: auto; overflow: hidden;">
+        <h3 class="text-2xl font-semibold mb-4 cursor-pointer">
+          Nuestra Responsabilidad Ambiental
+        </h3>
+        <div id="responsabilidad" class="hidden">
+          <p class="mb-4">
+            Estamos comprometidos con el medio ambiente y la gestión responsable de
+            los RAEE. Implementamos medidas para la recolección, clasificación,
+            reciclaje y disposición final adecuada de estos residuos, promoviendo la
+            sensibilización en nuestra comunidad.
+          </p>
+          <div class="w-64 m-auto flex items-center justify-center">
+
+            <dotlottie-player src="https://lottie.host/2ca8239c-6a0b-4dcc-997b-760e76e61399/WXLnqsq6RJ.json" speed="1"
+              loop autoplay></dotlottie-player>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2
+        class="text-3xl font-bold mb-6 text-center font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center mb-4">
+        Leyes sobre RAEE en Colombia
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div onclick="toggleCollapse('1672')"
+          class="bg-white p-6 rounded-lg shadow-md bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-200 hover:to-green-500 cursor-pointer">
+          <h3 class="text-xl font-semibold mb-2 text-center">Ley 1672 de 2013</h3>
+          <p id="1672" class="hidden">
+
+            Establece los lineamientos para la gestión integral de RAEE y la
+            responsabilidad extendida del productor.
+          </p>
+        </div>
+        <div onclick="toggleCollapse('1076')"
+          class="bg-white p-6 rounded-lg shadow-md bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-200 hover:to-green-500 cursor-pointer">
+          <h3 class="text-xl font-semibold mb-2 text-center">Decreto 1076 de 2015</h3>
+          <p id="1076" class="hidden">
+            Reglamenta la gestión integral de los RAEE, incluyendo requisitos
+            técnicos y administrativos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2
+        class="text-3xl font-bold mb-6 text-center font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center mb-4">
+        Leyes sobre RAEE en el Mundo
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div onclick="toggleCollapse('Europea')"
+          class="bg-white p-6 rounded-lg shadow-md bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-200 hover:to-green-500 cursor-pointer">
+          <h3 class="text-xl font-semibold mb-2 text-center">
+            Directiva RAEE de la Unión Europea
+          </h3>
+          <p id="Europea" class="hidden">
+            Establece requisitos para la gestión de RAEE en los países miembros de
+            la UE.
+          </p>
+        </div>
+        <div onclick="toggleCollapse('Basilea')"
+          class="bg-white p-6 rounded-lg shadow-md bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-200 hover:to-green-500 cursor-pointer">
+          <h3 class="text-xl font-semibold mb-2 text-center">Convenio de Basilea
+          </h3>
+          <p id="Basilea" class="hidden">
+            Regula el movimiento transfronterizo de desechos peligrosos, incluidos
+            los RAEE.
+          </p>
+          </p>
+        </div>
+    </section>
+
+    <section class="mt-12">
+      <h2
+        class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center mb-4">
+        Historia
+        de los RAEE</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div
+          class="bg-white p-6 rounded-lg shadow-md bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-200 hover:to-green-500 cursor-pointer"
+          onclick="openModal('origenes')">
+          <h3 class="text-xl font-semibold mb-2 text-center">Orígenes en la Revolución Industrial</h3>
+          <p>El surgimiento de la producción en masa de dispositivos eléctricos y electrónicos marcó el inicio de los
+            RAEE.
+          </p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-lg shadow-md bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-200 hover:to-green-500 cursor-pointer"
+          onclick="openModal('expansion')">
+          <h3 class="text-xl font-semibold mb-2 text-center">Expansión durante el siglo XX</h3>
+          <p>El rápido avance tecnológico impulsó una gran demanda de productos electrónicos.</p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-lg shadow-md bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-200 hover:to-green-500 cursor-pointer"
+          onclick="openModal('legislacion')">
+          <h3 class="text-xl font-semibold mb-2 text-center">Desarrollo de Legislación</h3>
+          <p>A partir de 1970, varios países comenzaron a promulgar leyes específicas para la gestión de los RAEE.</p>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modal-title" class="text-2xl font-bold mb-4"></h2>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer class="bg-green-600 text-white p-4 mt-12">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 RAEE. Todos los derechos reservados. <a href="https://www.youtube.com/@raeeproyecto-o3i"
+          target="_blank" class="hover:text-green-200">YouTube - RAEE</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Modal functionality
+    var modal = document.getElementById("modal");
+    var span = document.getElementsByClassName("close")[0];
+
+    function openModal(id) {
+      modal.style.display = "block";
+      var title = document.getElementById("modal-title");
+      var body = document.getElementById("modal-body");
+
+      switch (id) {
+        case 'origenes':
+          title.textContent = "Orígenes en la Revolución Industrial";
+          body.innerHTML = `
+            <p class="mb-4">La Revolución Industrial, que comenzó a mediados del siglo XVIII, marcó el inicio de la producción en masa de dispositivos eléctricos. Esta era vio el nacimiento de inventos revolucionarios como el telégrafo, el teléfono y la bombilla eléctrica, que sentaron las bases para la futura proliferación de aparatos eléctricos y electrónicos.</p>
+            <p class="mb-4">A medida que estas innovaciones se volvieron más accesibles y se integraron en la vida cotidiana, surgió un nuevo desafío: ¿qué hacer con estos dispositivos una vez que llegaban al final de su vida útil? Este fue el origen de lo que hoy conocemos como Residuos de Aparatos Eléctricos y Electrónicos (RAEE).</p>
+            <img src="images/origenes.jfif" alt="Revolución Industrial" class="w-full h-auto rounded-lg shadow-md">
+          `;
+          break;
+        case 'expansion':
+          title.textContent = "Expansión durante el siglo XX";
+          body.innerHTML = `
+            <p class="mb-4">El siglo XX fue testigo de una explosión sin precedentes en la producción y consumo de dispositivos electrónicos. La invención del transistor en 1947 revolucionó la industria, permitiendo la creación de dispositivos más pequeños, eficientes y asequibles.</p>
+            <p class="mb-4">Con la llegada de los ordenadores personales en la década de 1980 y la revolución de Internet en los 90, la demanda de productos electrónicos se disparó. Este crecimiento exponencial trajo consigo un aumento igualmente dramático en la generación de RAEE, planteando nuevos desafíos ambientales y de gestión de residuos.</p>
+            <img src="images/dispositivos.jfif" alt="Evolución de los dispositivos electrónicos" class="w-full h-auto rounded-lg shadow-md">
+          `;
+          break;
+        case 'legislacion':
+          title.textContent = "Desarrollo de Legislación";
+          body.innerHTML = `
+            <p class="mb-4">A medida que los RAEE se convertían en un problema cada vez más visible, los gobiernos comenzaron a tomar medidas. En la década de 1970, países como Japón y algunos estados de EE.UU. empezaron a promulgar las primeras leyes específicas para la gestión de residuos electrónicos.</p>
+            <p class="mb-4">Sin embargo, fue en la década de 2000 cuando se produjo un verdadero avance en la legislación sobre RAEE. La Unión Europea lideró el camino con la Directiva RAEE en 2002, que estableció objetivos de recolección, reciclaje y recuperación. Esta directiva sirvió de modelo para muchas otras legislaciones en todo el mundo, incluyendo la Ley 1672 de 2013 en Colombia.</p>
+            <img src="images/legislacion.jfif" alt="Legislación RAEE" class="w-full h-auto rounded-lg shadow-md">
+          `;
+          break;
+      }
+    }
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+  <script src="assets/js/script.js"></script>
+
+</body>
