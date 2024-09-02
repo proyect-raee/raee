@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>RAEE ♻ | Entrevistas</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+    />
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInFromLeft {
+        from {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInFromRight {
+        from {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      .slide-in-left {
+        animation: slideInFromLeft 1.5s ease-in-out;
+      }
+
+      .slide-in-right {
+        animation: slideInFromRight 1.5s ease-in-out;
+      }
+
+      .avatar-hover {
+        transition: border 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+      .avatar-hover:hover {
+        border: 4px solid transparent;
+        border-image: linear-gradient(
+          to right,
+          rgb(240, 108, 0),
+          rgb(14, 189, 14)
+        );
+        border-image-slice: 1;
+        scale: 1.6;
+        transition: ease-in 0.1s cubic-bezier();
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- header 1 -->
+    <header
+      class="bg-green-600 text-white p-2 flex flex-col items-center justify-center"
+    >
+      <h1 class="text-3xl font-bold">
+        <a href="index.html">RAEE</a>
+      </h1>
+      <button class="md:hidden" id="menu-toggle">
+        <dotlottie-player
+          src="https://lottie.host/6ac3280d-843d-42c3-9e12-c5db152ab977/4bUdqRhN20.json"
+          background="transparent"
+          speed="1"
+          class="w-10 h-10 inline-block align-middle"
+          loop
+          autoplay
+        >
+        </dotlottie-player>
+      </button>
+      <!-- menu 1 -->
+      <div>
+        <nav id="main-nav" class="hidden md:block">
+          <ul class="flex flex-wrap gap-4 md:flex-row md:space-x-4">
+            <li>
+              <a href="index.html" class="block py-2 hover:text-green-200"
+                >Inicio</a
+              >
+            </li>
+            <li class="relative group">
+              <button
+                class="block py-2 hover:text-green-200 focus:outline-none"
+              >
+                RAEE
+                <svg
+                  class="w-4 h-4 ml-1 inline-block"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <ul
+                class="absolute left-0 mt-2 z-50 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block"
+              >
+                <li>
+                  <a
+                    href="raee.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >Historia</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="reciclaje.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >Reciclaje</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="impacto.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >Impacto</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="residuos.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >Residuos</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="relative group">
+              <button
+                id="campaigns-toggle"
+                class="block py-2 hover:text-green-200 focus:outline-none"
+              >
+                Campañas
+                <svg
+                  class="w-4 h-4 ml-1 inline-block"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <ul
+                id="campaigns-submenu"
+                class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block"
+              >
+                <li>
+                  <a
+                    href="contribuir.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >Contribuir</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="llebicp.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >LLEBIPC</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="relative group">
+              <button
+                id="institutions-toggle"
+                class="block py-2 hover:text-green-200 focus:outline-none"
+              >
+                Instituciones
+                <svg
+                  class="w-4 h-4 ml-1 inline-block"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <ul
+                id="institutions-submenu"
+                class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block"
+              >
+                <li>
+                  <a
+                    href="sena.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >Sena</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="santander.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >Gnral Santander</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="formulario.html" class="block py-2 hover:text-green-200"
+                >Preguntas</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container mx-auto mt-8 px-4">
+      <section class="mb-12">
+        <h2
+          class="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center"
+        >
+          Entrevista Experta de los RAEE
+        </h2>
+        <div
+          style="
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+          "
+        >
+          <iframe
+            width="100%"
+            height="100%"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            "
+            src="https://drive.google.com/file/d/180oPWuwWCoePXHLZRTF5KeP1YZDObkWY/preview"
+            width="640"
+            height="480"
+            allow="autoplay"
+            title="Entrevistas"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+      <h2
+          class="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center"
+        >
+         Empresas encargadas del manejo de los RAEE
+        </h2>
+      <section class="flex  justify-center flex-wrap gap-12 p-2">
+        
+        <section
+          class="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96"
+        >
+          <div
+            class="relative h-56 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40 bg-blue-300 grid items-center"
+          >
+            <img src="images/logo-andesco.png" alt="card-image" />
+          </div>
+          <div class="p-6">
+            <h5
+              class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700"
+            >
+              Andesco
+            </h5>
+            <p
+              class="block font-sans text-base antialiased font-light leading-relaxed text-inherit"
+            >
+              Una asociación gremial sin ánimo de lucro que representa los
+              intereses de las empresas afiliadas de servicios públicos
+              domiciliarios y de comunicaciones, mediante la participación en la
+              construcción de políticas públicas, la promoción de mejores
+              prácticas y la generación de información de interés que ayuden al
+              crecimiento sostenible del sector y a la disminución de brechas
+              sociales, promoviendo el cuidado del medio ambiente.
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <button
+              class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-green-900 text-white shadow-md shadow-green-900/10 hover:shadow-lg hover:shadow-green-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+              type="button"
+            >
+              <a href="https://andesco.org.co" target="_blank"
+                ><strong>Sitio Web</strong></a
+              >
+            </button>
+          </div>
+        </section>
+        <section
+          class="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96"
+        >
+          <div
+            class="relative h-56 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40 bg-green-100 grid items-center"
+          >
+            <img src="images/logo-rv.png" alt="card-image" />
+          </div>
+          <div class="p-6">
+            <h5
+              class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700"
+            >
+              Red Verde
+            </h5>
+            <p
+              class="block font-sans text-base antialiased font-light leading-relaxed text-inherit"
+            >
+              Es el primer programa posconsumo de electrodomésticos en Colombia.
+              Nos encargamos en nombre de las empresas miembros del colectivo de
+              la administración, operación y financiación del sistema de
+              recolección selectiva y gestión ambiental de los electrodomésticos
+              cuando han cumplido su ciclo de vida y son descartados por los
+              consumidores.
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <button
+              class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-green-900 text-white shadow-md shadow-green-900/10 hover:shadow-lg hover:shadow-green-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+              type="button"
+            >
+              <a
+                href="https://www.redverde.co/que-es-red-verde/"
+                target="_blank"
+                ><strong>Sitio Web</strong></a
+              >
+            </button>
+          </div>
+        </section>
+        <section
+          class="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96"
+        >
+          <div
+            class="relative h-56 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40 bg-green-100 grid items-center"
+          >
+            <img src="images/logo-ciclo.jpg" alt="card-image" />
+          </div>
+          <div class="p-6">
+            <h5
+              class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700"
+            >
+              Cierra el ciclo
+            </h5>
+            <p
+              class="block font-sans text-base antialiased font-light leading-relaxed text-inherit"
+            >
+              Entidad sin ánimo de lucro que, en desarrollo del principio de
+              responsabilidad extendida del productor y representando las
+              principales empresas de este sector, implementa un sistema para la
+              gestión integral de envases y empaques de plaguicidas de uso
+              doméstico al finalizar su ciclo de vida, generando una solución de
+              fácil acceso al consumidor y aportando al desarrollo sostenible
+              del país.
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <button
+              class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-green-900 text-white shadow-md shadow-green-900/10 hover:shadow-lg hover:shadow-green-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+              type="button"
+            >
+              <a href="https://cierraelciclo.com/nosotros/" target="_blank"
+                ><strong>Sitio Web</strong></a
+              >
+            </button>
+          </div>
+        </section>
+        <section
+          class="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96"
+        >
+          <div
+            class="relative h-56 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40 bg-green-100 grid items-center"
+          >
+            <img src="images/logo-ecopilas.png" alt="card-image" />
+          </div>
+          <div class="p-6">
+            <h5
+              class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700"
+            >
+              Ecopilas
+            </h5>
+            <p
+              class="block font-sans text-base antialiased font-light leading-relaxed text-inherit"
+            >
+              La Fundación Ecopilas es un Sistema Colectivo de Responsabilidad
+              Ampliada del Productor para la gestión de los residuos de pilas y
+              baterías, constituida en el año 2000 por los principales
+              fabricantes e importadores de pilas que tenía por objetivo la
+              correcta gestión.
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <button
+              class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-green-900 text-white shadow-md shadow-green-900/10 hover:shadow-lg hover:shadow-green-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+              type="button"
+            >
+              <a href="https://www.ecopilas.es/" target="_blank"
+                ><strong>Sitio Web</strong></a
+              >
+            </button>
+          </div>
+        </section>
+        <section
+          class="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96"
+        >
+          <div
+            class="relative h-56 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40 bg-green-100 grid items-center"
+          >
+            <img src="images/logo-recoenergy.png" alt="card-image" />
+          </div>
+          <div class="p-6">
+            <h5
+              class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700"
+            >
+              RecoEnergy
+            </h5>
+            <p
+              class="block font-sans text-base antialiased font-light leading-relaxed text-inherit"
+            >
+              Es el primer programa colectivo a nivel país encargado de
+              gestionar de forma ambientalmente segura las baterías usadas plomo
+              - ácido, que una vez han cumplido su vida útil, requieren de un
+              manejo adecuado en el marco de Ia normatividad vigente, EI
+              propósito de nuestra corporación es concientizar y articular a
+              todos los actores de Ia cadena bajo el principio de
+              Responsabilidad Extendida del Productor - REP para asegurar Ia
+              devolución de las baterías usadas de manera res onsable con el
+              ambiente.
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <button
+              class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-green-900 text-white shadow-md shadow-green-900/10 hover:shadow-lg hover:shadow-green-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+              type="button"
+            >
+              <a href="https://www.recoenergy.com.co/" target="_blank"
+                ><strong>Sitio Web</strong></a
+              >
+            </button>
+          </div>
+        </section>
+        <section
+          class="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96"
+        >
+          <div
+            class="relative h-56 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40 bg-green-100 grid items-center"
+          >
+            <img src="images/logo-pilas-ambiente.svg" alt="card-image" />
+          </div>
+          <div class="p-6">
+            <h5
+              class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700"
+            >
+              Pilas con el ambiente
+            </h5>
+            <p
+              class="block font-sans text-base antialiased font-light leading-relaxed text-inherit"
+            >
+              es una corporación sin ánimo de lucro apoyada por ANDI y los
+              principales importadores y distribuidores de pilas y/o
+              acumuladores en el país, que buscan proteger el ambiente
+              recogiendo, transportando y dando el tratamiento ambientalmente
+              seguro a las pilas y/o acumuladores usados, evitando que lleguen a
+              los rellenos sanitarios, botaderos a cielo abierto o espacios
+              inadecuados y dar cumplimiento a la Resolución 1297 de 2010 del
+              MAVDT.
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <button
+              class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-green-900 text-white shadow-md shadow-green-900/10 hover:shadow-lg hover:shadow-green-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+              type="button"
+            >
+              <a href="https://www.pilascolombia.com" target="_blank"
+                ><strong>Sitio Web</strong></a
+              >
+            </button>
+          </div>
+        </section>
+        <section
+          class="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96"
+        >
+          <div
+            class="relative h-56 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40 bg-green-100 grid items-center"
+          >
+            <img src="images/Logo-EcoComputo.png" alt="card-image" />
+          </div>
+          <div class="p-6">
+            <h5
+              class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700"
+            >
+              EcoComputo
+            </h5>
+            <p
+              class="block font-sans text-base antialiased font-light leading-relaxed text-inherit"
+            >
+              Somos el Sistema Colectivo de Recolección Selectiva y Gestión
+              Ambiental de Residuos de Aparatos Eléctricos y Electrónicos más
+              grande del país y de Latinoamérica, surgimos como respuesta a la
+              iniciativa del Gobierno Nacional de impulsar el principio de
+              Responsabilidad Extendida del Productor (REP) y al cumplimiento de
+              la normatividad ambiental con el propósito de prevenir y controlar
+              la degradación del ambiente a través del cumplimiento de la
+              normatividad ambiental. A través de nuestra gestión los usuarios
+              institucionales y finales de todo el país cuentan con herramientas
+              para realizar el manejo adecuado de sus residuos tecnológicos,
+              influenciando e incrementando su conciencia ambiental, modificando
+              sus hábitos de consumo y promoviendo así el manejo y la gestión
+              adecuada de los residuos de AEE.
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <button
+              class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-green-900 text-white shadow-md shadow-green-900/10 hover:shadow-lg hover:shadow-green-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+              type="button"
+            >
+              <a href="https://ecocomputo.com/" target="_blank"
+                ><strong>Sitio Web</strong></a
+              >
+            </button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="bg-green-600 text-white p-8">
+      <footer class="py-8 mb-8">
+        <div class="container mx-auto">
+          <h2 class="text-2xl font-bold text-center mb-6">
+            <p class="text-xl">Juntos por un futuro más sostenible</p>
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Miembro 1 -->
+            <div class="flex flex-col items-center p-4">
+              <img
+                src="images/avatar_1.png"
+                alt="avatar"
+                class="w-32 h-32 rounded-lg mb-2 avatar-hover"
+              />
+              <p class="text-center font-semibold">ADRIAN DELGADO</p>
+            </div>
+            <!-- Miembro 2 -->
+            <div class="flex flex-col items-center p-4">
+              <img
+                src="images/avatar_2.png"
+                alt="avatar"
+                class="w-32 h-32 rounded-lg mb-2 avatar-hover"
+              />
+              <p class="text-center font-semibold">DANIEL CHAPARRO</p>
+            </div>
+            <!-- Miembro 3 -->
+            <div class="flex flex-col items-center p-4">
+              <img
+                src="images/avatar_4.png"
+                alt="avatar"
+                class="w-32 h-32 rounded-lg mb-2 avatar-hover"
+              />
+              <p class="text-center font-semibold">JHOSMAN GODOY</p>
+            </div>
+            <!-- Miembro 4 -->
+            <div class="flex flex-col items-center p-4">
+              <img
+                src="images/avatar_3.png"
+                alt="avatar"
+                class="w-32 h-32 rounded-lg mb-2 avatar-hover"
+              />
+              <p class="text-center font-semibold">JAIVER CASTRILLO</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="container mx-auto grid md:grid-cols-3 gap-8">
+        <section>
+          <h3 class="text-xl font-bold mb-4">Enlaces de interés</h3>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="https://www.youtube.com/user/greenpeaceusa"
+                target="_blank"
+                class="hover:text-green-200"
+                >Greenpeace USA</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/user/NationalGeographic"
+                target="_blank"
+                class="hover:text-green-200"
+                >National Geographic</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.ambientum.com/"
+                target="_blank"
+                class="hover:text-green-200"
+                >Ambientum</a
+              >
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3 class="text-xl font-bold mb-4">Más recursos</h3>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="https://www.epa.gov/recycle/electronics-donation-and-recycling"
+                target="_blank"
+                class="hover:text-green-200"
+                >EPA - Electronics Donation and Recycling</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.greenpeace.org/global/"
+                target="_blank"
+                class="hover:text-green-200"
+                >Greenpeace USA - E-Waste</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.unenvironment.org/"
+                target="_blank"
+                class="hover:text-green-200"
+                >UN Environment Programme</a
+              >
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3 class="text-xl font-bold mb-4">Contáctanos</h3>
+          <form
+            id="contact-form"
+            action="https://formsubmit.co/raeeproyecto392@gmail.com"
+            method="POST"
+          >
+            <input
+              type="text"
+              name="name"
+              placeholder="Nombre"
+              required
+              class="w-full p-2 mb-2 text-gray-800 rounded"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Correo Electrónico"
+              required
+              class="w-full p-2 mb-2 text-gray-800 rounded"
+            />
+            <textarea
+              name="message"
+              placeholder="Mensaje"
+              rows="3"
+              required
+              class="w-full p-2 mb-2 text-gray-800 rounded"
+            ></textarea>
+            <input type="hidden" name="_captcha" value="true" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://raee.vercel.app/thankyou_contact.html"
+            />
+            <input
+              type="hidden"
+              name="_autoresponse"
+              value="Gracias por contactarnos"
+            />
+            <input type="hidden" name="_template" value="table" />
+            <button
+              class="mt-4 border p-2 text-black hover:text-green-900 cursor-pointer"
+              type="submit"
+              class="mt-4"
+            >
+              Enviar
+            </button>
+          </form>
+        </section>
+      </div>
+
+      <footer class="bg-green-600 text-white p-4 mt-12">
+        <div class="container mx-auto text-center">
+          <p>
+            &copy; 2024 RAEE. Todos los derechos reservados.
+            <a
+              href="https://www.youtube.com/@raeeproyecto-o3i"
+              target="_blank"
+              class="text-green-900 hover:text-red-900"
+              >YouTube</a
+            >
+          </p>
+        </div>
+      </footer>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
