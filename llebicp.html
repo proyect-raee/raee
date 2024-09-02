@@ -1,380 +1,539 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="es">
+  <head>
+    <title>LLEBIC | Campaña</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <style>
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
 
-<head>
-  <title>LLEBIC | Campaña</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link rel="shortcut icon" href="images/favicon.ico">
-  <style>
-    .swiper-container {
-      width: 100%;
-      height: 100%;
-    }
+      .swiper-slide img {
+        width: 100%;
+        height: auto;
+        margin: auto 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-    .swiper-slide img {
-      width: 100%;
-      height: auto;
-    }
+      .zoomable {
+        transition: transform 0.3s ease;
+      }
 
-    .zoomable {
-      transition: transform 0.3s ease;
-    }
+      .zoomable:hover {
+        cursor: pointer;
+      }
 
-    .zoomable:hover {
-      cursor: pointer;
-    }
+      .zoomable:active {
+        transform: scale(2.5);
+      }
+    </style>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+  </head>
 
-    .zoomable:active {
-      transform: scale(2.5);
-    }
-  </style>
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-</head>
-
-<body class="bg-gray-100">
-  <!-- header 1 -->
-  <header class="bg-green-600 text-white p-2 flex flex-col items-center justify-center">
-    <h1 class="text-3xl font-bold">
-      <a href="index.html">RAEE</a>
-    </h1>
-    <button class="md:hidden" id="menu-toggle">
-      <dotlottie-player src="https://lottie.host/6ac3280d-843d-42c3-9e12-c5db152ab977/4bUdqRhN20.json"
-        background="transparent" speed="1" class="w-10 h-10 inline-block align-middle" loop autoplay>
-      </dotlottie-player>
-    </button>
-    <!-- menu 1 -->
-    <div>
-      <nav id="main-nav" class="hidden md:block">
-        <ul class="flex flex-wrap gap-4 md:flex-row md:space-x-4">
-          <li>
-            <a href="index.html" class="block py-2 hover:text-green-200">Inicio</a>
-          </li>
-          <li class="relative group">
-            <button class="block py-2 hover:text-green-200 focus:outline-none">
-              RAEE
-              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <ul
-              class="absolute left-0 mt-2 z-50 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
-              <li>
-                <a href="raee.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Historia</a>
-              </li>
-              <li>
-                <a href="reciclaje.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Reciclaje</a>
-              </li>
-              <li>
-                <a href="impacto.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Impacto</a>
-              </li>
-              <li>
-                <a href="residuos.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Residuos</a>
-              </li>
-            </ul>
-          </li>
-          <li class="relative group">
-            <button id="campaigns-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
-              Campañas
-              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <ul id="campaigns-submenu"
-              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
-              <li>
-                <a href="contribuir.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Contribuir</a>
-              </li>
-              <li>
-                <a href="llebicp.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">LLEBIPC</a>
-              </li>
-            </ul>
-          </li>
-          <li class="relative group">
-            <button id="institutions-toggle" class="block py-2 hover:text-green-200 focus:outline-none">
-              Instituciones
-              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <ul id="institutions-submenu"
-              class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
-              <li>
-                <a href="sena.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Sena</a>
-              </li>
-              <li>
-                <a href="santander.html" class="block px-4 py-2 text-sm text-white hover:bg-green-700">Gnral
-                  Santander</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="formulario.html" class="block py-2 hover:text-green-200">Preguntas</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Main -->
-  <main class="container mx-auto mt-8">
-
-
-    <section class="bg-white p-6 rounded-lg shadow-md mb-16 mt-8">
-      <h2
-        class="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center">
-        Campaña "Juega con LLEBIC"
-      </h2>
-      <p class="text-xl text-balance">
-        La campaña "Juega con LLEBIC" tiene como objetivo principal promover la integración comunitaria a través del
-        deporte y
-        el juego en nuestra región. Esta iniciativa busca no solo fomentar la actividad física entre los jóvenes, sino
-        también
-        crear un espacio donde puedan desarrollarse socialmente y adquirir habilidades importantes para su crecimiento
-        personal. A través de una serie de actividades y eventos, tales como torneos deportivos, juegos al aire libre, y
-        talleres educativos, buscamos fortalecer los lazos comunitarios, ofreciendo oportunidades de diversión y
-        aprendizaje
-        en un ambiente seguro y colaborativo. Además, nos enfocamos en la inclusión de todas las edades y grupos
-        sociales,
-        asegurando que cada miembro de la comunidad tenga un lugar y una voz en este esfuerzo conjunto por mejorar la
-        cohesión
-        social y el bienestar colectivo.
-      </p>
-      <h3
-        class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center">
-        Organizada por:</h3>
-      <p class="text-lg text-center">Gobernación de Norte de Santander</p>
-      <h3 class="text-xl font-bold mt-6 mb-4">Con la colaboración de:</h3>
-      <p>- Patricia Herrera Ruiz, Gestora Social LLEBICP</p>
-      <p>- Kellys Lorena Ortiz Méndez, Coordinadora Operativa LLEBIPCC</p>
-      <h3 class="text-xl font-bold mt-6 mb-4">Participación Especial de:</h3>
-      <p>Estudiantes del colegio general Santander y padres de familia</p>
-      <h3 class="text-xl font-bold mt-6 mb-4">Grupo:</h3>
-      <p>- Adrian Santiago Delgado Duarte</p>
-      <p>- Jhosman Stiven Godoy Lopez</p>
-      <p>- Jaiver Sneider Castrillo Palencia</p>
-      <p>- Daniel Yesid Chaparro Fuentes</p>
-
-
-
-    </section>
-
-    <!-- Swiper -->
-    <section class="mb-12 overflow-hidden">
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <!-- Diapositivas -->
-          <div>
-            <img src="images/image1.jpg" alt="Descripción de la imagen 1">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image2.jpg" alt="Descripción de la imagen 2">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image3.jpg" alt="Descripción de la imagen 3">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image4.jpg" alt="Descripción de la imagen 4">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image5.jpg" alt="Descripción de la imagen 5">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image6.jpg" alt="Descripción de la imagen 6">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image7.jpg" alt="Descripción de la imagen 7">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image8.jpg" alt="Descripción de la imagen 8">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image9.jpg" alt="Descripción de la imagen 9">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image10.jpg" alt="Descripción de la imagen 10">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image11.jpg" alt="Descripción de la imagen 11">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image12.jpg" alt="Descripción de la imagen 12">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image13.jpg" alt="Descripción de la imagen 13">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image14.jpg" alt="Descripción de la imagen 14">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image15.jpg" alt="Descripción de la imagen 15">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image16.jpg" alt="Descripción de la imagen 16">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image17.jpg" alt="Descripción de la imagen 17">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image18.jpg" alt="Descripción de la imagen 18">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image19.jpg" alt="Descripción de la imagen 19">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image20.jpg" alt="Descripción de la imagen 20">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image21.jpg" alt="Descripción de la imagen 21">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image22.jpg" alt="Descripción de la imagen 22">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image23.jpg" alt="Descripción de la imagen 23">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image24.jpg" alt="Descripción de la imagen 24">
-          </div>
-          <div class="swiper-slide">
-            <img src="images/image25.jpg" alt="Descripción de la imagen 25">
-          </div>
-        </div>
+  <body class="bg-gray-100">
+    <!-- header 1 -->
+    <header
+      class="bg-green-600 text-white p-2 flex flex-col items-center justify-center"
+    >
+      <h1 class="text-3xl font-bold">
+        <a href="index.html">RAEE</a>
+      </h1>
+      <button class="md:hidden" id="menu-toggle">
+        <dotlottie-player
+          src="https://lottie.host/6ac3280d-843d-42c3-9e12-c5db152ab977/4bUdqRhN20.json"
+          background="transparent"
+          speed="1"
+          class="w-10 h-10 inline-block align-middle"
+          loop
+          autoplay
+        >
+        </dotlottie-player>
+      </button>
+      <!-- menu 1 -->
+      <div>
+        <nav id="main-nav" class="hidden md:block">
+          <ul class="flex flex-wrap gap-4 md:flex-row md:space-x-4">
+            <li>
+              <a href="index.html" class="block py-2 hover:text-green-200"
+                >Inicio</a
+              >
+            </li>
+            <li class="relative group">
+              <button
+                class="block py-2 hover:text-green-200 focus:outline-none"
+              >
+                RAEE
+                <svg
+                  class="w-4 h-4 ml-1 inline-block"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <ul
+                class="absolute left-0 mt-2 z-50 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block"
+              >
+                <li>
+                  <a
+                    href="raee.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >Historia</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="reciclaje.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >Reciclaje</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="impacto.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >Impacto</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="residuos.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >Residuos</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="relative group">
+              <button
+                id="campaigns-toggle"
+                class="block py-2 hover:text-green-200 focus:outline-none"
+              >
+                Campañas
+                <svg
+                  class="w-4 h-4 ml-1 inline-block"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <ul
+                id="campaigns-submenu"
+                class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block"
+              >
+                <li>
+                  <a
+                    href="contribuir.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >Contribuir</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="llebicp.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >LLEBIPC</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="relative group">
+              <button
+                id="institutions-toggle"
+                class="block py-2 hover:text-green-200 focus:outline-none"
+              >
+                Instituciones
+                <svg
+                  class="w-4 h-4 ml-1 inline-block"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <ul
+                id="institutions-submenu"
+                class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-green-600 ring-1 ring-black ring-opacity-5 hidden group-hover:block"
+              >
+                <li>
+                  <a
+                    href="sena.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >Sena</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="santander.html"
+                    class="block px-4 py-2 text-sm text-white hover:bg-green-700"
+                    >Gnral Santander</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="formulario.html" class="block py-2 hover:text-green-200"
+                >Preguntas</a
+              >
+            </li>
+          </ul>
+        </nav>
       </div>
-    </section>
-    <h3
-      class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center">
-      VIDEOS DE LA ACTIVIDAD</h3>
-    <section class="mb-12 overflow-hidden">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <!-- Diapositivas -->
-        <div>
-          <video controls src="videos/video1.mp4" class="w-full" alt="Descripción de la imagen 25"></video>
+    </header>
+
+    <!-- Main -->
+    <main class="container mx-auto mt-8">
+      <section class="grid md:grid-cols-2 gap-8 mb-12">
+        <div
+          class="bg-white p-6 rounded-lg shadow-md slide-in-left shadow-md bg-gradient-to-r from-teal-400 to-blue-500"
+        >
+          <h2
+            class="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center"
+          >
+            Campaña "Juega con LLEBIC"
+          </h2>
+          <p class="text-xl text-balance">
+            La campaña "Juega con LLEBIC" tiene como objetivo principal promover
+            la integración comunitaria a través del deporte y el juego en
+            nuestra región. Esta iniciativa busca no solo fomentar la actividad
+            física entre los jóvenes, sino también crear un espacio donde puedan
+            desarrollarse socialmente y adquirir habilidades importantes para su
+            crecimiento personal. A través de una serie de actividades y
+            eventos, tales como torneos deportivos, juegos al aire libre, y
+            talleres educativos, buscamos fortalecer los lazos comunitarios,
+            ofreciendo oportunidades de diversión y aprendizaje en un ambiente
+            seguro y colaborativo. Además, nos enfocamos en la inclusión de
+            todas las edades y grupos sociales, asegurando que cada miembro de
+            la comunidad tenga un lugar y una voz en este esfuerzo conjunto por
+            mejorar la cohesión social y el bienestar colectivo.
+          </p>
+          <h3
+            class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center"
+          >
+            Organizada por:
+          </h3>
+          <p class="text-lg text-center">Gobernación de Norte de Santander</p>
+          <h3 class="text-xl font-bold mt-6 mb-4">Con la colaboración de:</h3>
+          <p>- Patricia Herrera Ruiz, Gestora Social LLEBICP</p>
+          <p>- Kellys Lorena Ortiz Méndez, Coordinadora Operativa LLEBIPCC</p>
+          <h3 class="text-xl font-bold mt-6 mb-4">
+            Participación Especial de:
+          </h3>
+          <p>Estudiantes del colegio general Santander y padres de familia</p>
+          <h3 class="text-xl font-bold mt-6 mb-4">Grupo:</h3>
+          <p>- Adrian Santiago Delgado Duarte</p>
+          <p>- Jhosman Stiven Godoy Lopez</p>
+          <p>- Jaiver Sneider Castrillo Palencia</p>
+          <p>- Daniel Yesid Chaparro Fuentes</p>
         </div>
-        <div>
-          <video controls src="videos/video2.mp4" class="w-full" alt="Descripción de la imagen 25"></video>
+        <section class="mb-12 overflow-hidden">
+          <h3
+            class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-green-700 text-center"
+          >
+            VIDEOS DE LA ACTIVIDAD
+          </h3>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-6 items-center"
+          >
+            <!-- Diapositivas -->
+            <div>
+              <video
+                controls
+                src="videos/video1.mp4"
+                class="w-full"
+                alt="Descripción de la imagen 25"
+              ></video>
+            </div>
+            <div>
+              <video
+                controls
+                src="videos/video2.mp4"
+                class="w-full"
+                alt="Descripción de la imagen 25"
+              ></video>
+            </div>
+            <div>
+              <video
+                controls
+                src="videos/video3.mp4"
+                class="w-full"
+                alt="Descripción de la imagen 25"
+              ></video>
+            </div>
+            <div>
+              <video
+                controls
+                src="videos/video4.mp4"
+                class="w-full"
+                alt="Descripción de la imagen 25"
+              ></video>
+            </div>
+            <div>
+              <video
+                controls
+                src="videos/video5.mp4"
+                class="w-full"
+                alt="Descripción de la imagen 25"
+              ></video>
+            </div>
+            <div>
+              <video
+                controls
+                src="videos/video6.mp4"
+                class="w-full"
+                alt="Descripción de la imagen 25"
+              ></video>
+            </div>
+            <div>
+              <video
+                controls
+                src="videos/video7.mp4"
+                class="w-full"
+                alt="Descripción de la imagen 25"
+              ></video>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Swiper -->
+      <section class="mb-12 overflow-hidden">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <!-- Diapositivas -->
+            <div>
+              <img src="images/image1.jpg" alt="Descripción de la imagen 1" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image2.jpg" alt="Descripción de la imagen 2" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image3.jpg" alt="Descripción de la imagen 3" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image4.jpg" alt="Descripción de la imagen 4" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image5.jpg" alt="Descripción de la imagen 5" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image6.jpg" alt="Descripción de la imagen 6" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image7.jpg" alt="Descripción de la imagen 7" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image8.jpg" alt="Descripción de la imagen 8" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image9.jpg" alt="Descripción de la imagen 9" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image10.jpg" alt="Descripción de la imagen 10" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image11.jpg" alt="Descripción de la imagen 11" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image12.jpg" alt="Descripción de la imagen 12" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image13.jpg" alt="Descripción de la imagen 13" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image14.jpg" alt="Descripción de la imagen 14" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image15.jpg" alt="Descripción de la imagen 15" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image16.jpg" alt="Descripción de la imagen 16" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image17.jpg" alt="Descripción de la imagen 17" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image18.jpg" alt="Descripción de la imagen 18" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image19.jpg" alt="Descripción de la imagen 19" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image20.jpg" alt="Descripción de la imagen 20" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image21.jpg" alt="Descripción de la imagen 21" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image22.jpg" alt="Descripción de la imagen 22" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image23.jpg" alt="Descripción de la imagen 23" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image24.jpg" alt="Descripción de la imagen 24" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image25.jpg" alt="Descripción de la imagen 25" />
+            </div>
+          </div>
         </div>
-        <div>
-          <video controls src="videos/video3.mp4" class="w-full" alt="Descripción de la imagen 25"></video>
-        </div>
-        <div>
-          <video controls src="videos/video4.mp4" class="w-full" alt="Descripción de la imagen 25"></video>
-        </div>
-        <div>
-          <video controls src="videos/video5.mp4" class="w-full" alt="Descripción de la imagen 25"></video>
-        </div>
-        <div>
-          <video controls src="videos/video6.mp4" class="w-full" alt="Descripción de la imagen 25"></video>
-        </div>
-        <div>
-          <video controls src="videos/video7.mp4" class="w-full" alt="Descripción de la imagen 25"></video>
-        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white p-4 mt-12">
+      <div class="container mx-auto grid md:grid-cols-2 gap-8">
+        <section>
+          <h3 class="text-xl font-bold mb-4">Redes de LLEBIPC</h3>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="https://www.facebook.com/profile.php?id=61553818083645&mibextid=CTbP7E&rdid=rAaqLS7H9uYl26py"
+                target="_blank"
+                class="hover:text-green-200"
+                >Facebook</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/llebipc?igsh=MXF5Z3JoZ3BkZGs2YQ%3D%3D"
+                target="_blank"
+                class="hover:text-green-200"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/@LLEBIPC"
+                target="_blank"
+                class="hover:text-green-200"
+                >YouTube</a
+              >
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3 class="text-xl font-bold mb-4">Más recursos</h3>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="https://www.llebipc.com"
+                target="_blank"
+                class="hover:text-green-200"
+                >LLEBIPC</a
+              >
+            </li>
+          </ul>
+        </section>
       </div>
-    </section>
-  </main>
+      <div class="container mx-auto text-center mt-6">
+        <p>&copy; 2024 RAEE ♻. Todos los derechos reservados.</p>
+      </div>
+    </footer>
 
-  <!-- Footer -->
-  <footer class="bg-green-600 text-white p-4 mt-12">
-    <div class="container mx-auto grid md:grid-cols-2 gap-8">
-      <section>
-        <h3 class="text-xl font-bold mb-4">Redes de LLEBIPC</h3>
-        <ul class="space-y-2">
-          <li>
-            <a href="https://www.facebook.com/profile.php?id=61553818083645&mibextid=CTbP7E&rdid=rAaqLS7H9uYl26py"
-              target="_blank" class="hover:text-green-200">Facebook</a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/llebipc?igsh=MXF5Z3JoZ3BkZGs2YQ%3D%3D" target="_blank"
-              class="hover:text-green-200">Instagram</a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/@LLEBIPC" target="_blank" class="hover:text-green-200">YouTube</a>
-          </li>
-        </ul>
-      </section>
-      <section>
-        <h3 class="text-xl font-bold mb-4">Más recursos</h3>
-        <ul class="space-y-2">
-          <li>
-            <a href="https://www.llebipc.com" target="_blank" class="hover:text-green-200">LLEBIPC</a>
-          </li>
-
-        </ul>
-      </section>
-
-    </div>
-    <div class="container mx-auto text-center mt-6">
-      <p>&copy; 2024 RAEE ♻. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
-
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      new Swiper('.swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        centeredSlides: false,
-        loop: false,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 1,
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Swiper(".swiper-container", {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          centeredSlides: false,
+          loop: false,
+          autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
           },
-          768: {
-            slidesPerView: 2,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
           },
-          1024: {
-            slidesPerView: 2,
+          breakpoints: {
+            640: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 2,
+            },
           },
-        },
+        });
       });
-    });
-    document.addEventListener('DOMContentLoaded', function () {
-      new Swiper('.swiper-container-video', {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        centeredSlides: true,
-        loop: true,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: true,
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 3,
+      document.addEventListener("DOMContentLoaded", function () {
+        new Swiper(".swiper-container-video", {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          centeredSlides: true,
+          loop: true,
+          autoplay: {
+            delay: 4000,
+            disableOnInteraction: true,
           },
-          768: {
-            slidesPerView: 3,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
           },
-          1024: {
-            slidesPerView: 4,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
           },
-        },
+          breakpoints: {
+            640: {
+              slidesPerView: 3,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+          },
+        });
       });
-    });
-  </script>
-  <script src="assets/js/script.js"></script>
-
-</body>
+    </script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
