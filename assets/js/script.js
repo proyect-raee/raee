@@ -46,7 +46,6 @@ function handleAudioControl(playButtonId, pauseButtonId, audioId) {
 }
 
 handleAudioControl("play-button", "pause-button", "himno-audio");
-handleAudioControl("play-button-sena", "pause-button-sena", "himno-audio-sena");
 
 function toggleCollapse(id) {
   const content = document.getElementById(id);
