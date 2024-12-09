@@ -1,0 +1,983 @@
+[
+  {
+    "block": "A1",
+    "coefficient": 0.68
+  },
+  {
+    "block": "A2",
+    "coefficient": 0.52
+  },
+  {
+    "block": "A3",
+    "coefficient": 0.78
+  },
+  {
+    "block": "B1",
+    "coefficient": 0.49
+  },
+  {
+    "block": "B2",
+    "coefficient": 0.39
+  },
+  {
+    "block": "B3",
+    "coefficient": 0.39
+  },
+  {
+    "block": "B4",
+    "coefficient": 0.39
+  },
+  {
+    "block": "B5",
+    "coefficient": 0.39
+  },
+  {
+    "block": "B6",
+    "coefficient": 0.39
+  },
+  {
+    "block": "B7",
+    "coefficient": 0.39
+  },
+  {
+    "block": "B8",
+    "coefficient": 0.49
+  },
+  {
+    "block": "B9",
+    "coefficient": 0.39
+  },
+  {
+    "block": "B10",
+    "coefficient": 0.39
+  },
+  {
+    "block": "B11",
+    "coefficient": 0.39
+  },
+  {
+    "block": "B12",
+    "coefficient": 0.53
+  },
+  {
+    "block": "C1",
+    "coefficient": 0.39
+  },
+  {
+    "block": "C2",
+    "coefficient": 0.39
+  },
+  {
+    "block": "C3",
+    "coefficient": 0.39
+  },
+  {
+    "block": "C4",
+    "coefficient": 0.39
+  },
+  {
+    "block": "C5",
+    "coefficient": 1.04
+  },
+  {
+    "block": "C6",
+    "coefficient": 0.39
+  },
+  {
+    "block": "C7",
+    "coefficient": 0.39
+  },
+  {
+    "block": "C8",
+    "coefficient": 0.39
+  },
+  {
+    "block": "C9",
+    "coefficient": 0.39
+  },
+  {
+    "block": "C10",
+    "coefficient": 0.39
+  },
+  {
+    "block": "C11",
+    "coefficient": 0.94
+  },
+  {
+    "block": "D1",
+    "coefficient": 0.51
+  },
+  {
+    "block": "D2",
+    "coefficient": 0.39
+  },
+  {
+    "block": "D3",
+    "coefficient": 0.39
+  },
+  {
+    "block": "D4",
+    "coefficient": 0.39
+  },
+  {
+    "block": "D5",
+    "coefficient": 0.39
+  },
+  {
+    "block": "D6",
+    "coefficient": 0.39
+  },
+  {
+    "block": "D7",
+    "coefficient": 0.39
+  },
+  {
+    "block": "D8",
+    "coefficient": 0.51
+  },
+  {
+    "block": "D9",
+    "coefficient": 0.39
+  },
+  {
+    "block": "D10",
+    "coefficient": 0.39
+  },
+  {
+    "block": "D11",
+    "coefficient": 0.39
+  },
+  {
+    "block": "D12",
+    "coefficient": 0.39
+  },
+  {
+    "block": "D13",
+    "coefficient": 0.39
+  },
+  {
+    "block": "D14",
+    "coefficient": 0.39
+  },
+  {
+    "block": "E1",
+    "coefficient": 0.39
+  },
+  {
+    "block": "E2",
+    "coefficient": 0.39
+  },
+  {
+    "block": "E3",
+    "coefficient": 0.39
+  },
+  {
+    "block": "E4",
+    "coefficient": 0.39
+  },
+  {
+    "block": "E5",
+    "coefficient": 0.39
+  },
+  {
+    "block": "E6",
+    "coefficient": 0.39
+  },
+  {
+    "block": "E7",
+    "coefficient": 0.39
+  },
+  {
+    "block": "E8",
+    "coefficient": 64
+  },
+  {
+    "block": "E9",
+    "coefficient": 0.39
+  },
+  {
+    "block": "E10",
+    "coefficient": 0.39
+  },
+  {
+    "block": "E11",
+    "coefficient": 0.39
+  },
+  {
+    "block": "E12",
+    "coefficient": 0.39
+  },
+  {
+    "block": "E13",
+    "coefficient": 0.39
+  },
+  {
+    "block": "E14",
+    "coefficient": 0.39
+  },
+  {
+    "block": "E15",
+    "coefficient": 0.39
+  },
+  {
+    "block": "E16",
+    "coefficient": 1.04
+  },
+  {
+    "block": "F1",
+    "coefficient": 0.48
+  },
+  {
+    "block": "F2",
+    "coefficient": 0.39
+  },
+  {
+    "block": "F3",
+    "coefficient": 0.39
+  },
+  {
+    "block": "F4",
+    "coefficient": 0.39
+  },
+  {
+    "block": "F5",
+    "coefficient": 0.39
+  },
+  {
+    "block": "F6",
+    "coefficient": 0.39
+  },
+  {
+    "block": "F7",
+    "coefficient": 0.39
+  },
+  {
+    "block": "F8",
+    "coefficient": 0.39
+  },
+  {
+    "block": "F9",
+    "coefficient": 0.39
+  },
+  {
+    "block": "F10",
+    "coefficient": 0.39
+  },
+  {
+    "block": "F11",
+    "coefficient": 0.39
+  },
+  {
+    "block": "F12",
+    "coefficient": 0.39
+  },
+  {
+    "block": "F13",
+    "coefficient": 0.39
+  },
+  {
+    "block": "F14",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G1",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G2",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G3",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G4",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G5",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G6",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G7",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G8",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G9",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G10",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G11",
+    "coefficient": 0.85
+  },
+  {
+    "block": "G12",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G13",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G14",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G15",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G16",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G17",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G18",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G19",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G20",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G21",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G22",
+    "coefficient": 0.39
+  },
+  {
+    "block": "G23",
+    "coefficient": 1.20
+  },
+  {
+    "block": "H1",
+    "coefficient": 0.39
+  },
+  {
+    "block": "H2",
+    "coefficient": 0.39
+  },
+  {
+    "block": "H3",
+    "coefficient": 0.39
+  },
+  {
+    "block": "H4",
+    "coefficient": 0.39
+  },
+  {
+    "block": "H5",
+    "coefficient": 0.39
+  },
+  {
+    "block": "H6",
+    "coefficient": 0.39
+  },
+  {
+    "block": "H7",
+    "coefficient": 0.39
+  },
+  {
+    "block": "H8",
+    "coefficient": 0.39
+  },
+  {
+    "block": "H9",
+    "coefficient": 0.60
+  },
+  {
+    "block": "H10",
+    "coefficient": 0.39
+  },
+  {
+    "block": "H11",
+    "coefficient": 0.39
+  },
+  {
+    "block": "H12",
+    "coefficient": 0.39
+  },
+  {
+    "block": "H13",
+    "coefficient": 0.39
+  },
+  {
+    "block": "H14",
+    "coefficient": 0.39
+  },
+  {
+    "block": "H15",
+    "coefficient": 0.39
+  },
+  {
+    "block": "H16",
+    "coefficient": 0.39
+  },
+  {
+    "block": "H17",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I1",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I2",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I3",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I4",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I5",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I6",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I7",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I8",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I9",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I10",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I11",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I12",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I13",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I14",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I15",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I16",
+    "coefficient": 1.10
+  },
+  {
+    "block": "I17",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I18",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I19",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I20",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I21",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I22",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I23",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I24",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I25",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I26",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I27",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I28",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I29",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I30",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I31",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I32",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I33",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I34",
+    "coefficient": 0.39
+  },
+  {
+    "block": "I35",
+    "coefficient": 80
+  },
+  {
+    "block": "J1",
+    "coefficient": 0.53
+  },
+  {
+    "block": "J2",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J3",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J4",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J5",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J6",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J7",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J8",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J9",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J10",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J11",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J12",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J13",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J14",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J15",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J16",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J17",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J18",
+    "coefficient": 0.54
+  },
+  {
+    "block": "J19",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J20",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J21",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J22",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J23",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J24",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J25",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J26",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J27",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J28",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J29",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J30",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J31",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J32",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J33",
+    "coefficient": 0.39
+  },
+  {
+    "block": "J34",
+    "coefficient": 0.39
+  },
+  {
+    "block": "K1",
+    "coefficient": 0.39
+  },
+  {
+    "block": "K2",
+    "coefficient": 0.39
+  },
+  {
+    "block": "K3",
+    "coefficient": 0.39
+  },
+  {
+    "block": "K4",
+    "coefficient": 0.39
+  },
+  {
+    "block": "K5",
+    "coefficient": 0.39
+  },
+  {
+    "block": "K6",
+    "coefficient": 0.39
+  },
+  {
+    "block": "K7",
+    "coefficient": 0.39
+  },
+  {
+    "block": "K8",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L1",
+    "coefficient": 0.55
+  },
+  {
+    "block": "L2",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L3",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L4",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L5",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L6",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L7",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L8",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L9",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L10",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L11",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L12",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L13",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L14",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L15",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L16",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L17",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L18",
+    "coefficient": 0.58
+  },
+  {
+    "block": "L19",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L20",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L21",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L22",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L23",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L24",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L25",
+    "coefficient": 0.39
+  },
+  {
+    "block": "l26",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L27",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L28",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L29",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L30",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L31",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L32",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L33",
+    "coefficient": 0.39
+  },
+  {
+    "block": "L34",
+    "coefficient": 0.39
+  },
+  {
+    "block": "M1",
+    "coefficient": 0.75
+  },
+  {
+    "block": "M2",
+    "coefficient": 0.39
+  },
+  {
+    "block": "M3",
+    "coefficient": 0.39
+  },
+  {
+    "block": "M4",
+    "coefficient": 0.39
+  },
+  {
+    "block": "M5",
+    "coefficient": 0.39
+  },
+  {
+    "block": "M6",
+    "coefficient": 0.39
+  },
+  {
+    "block": "M7",
+    "coefficient": 0.39
+  },
+  {
+    "block": "M8",
+    "coefficient": 0.39
+  },
+  {
+    "block": "M9",
+    "coefficient": 0.39
+  },
+  {
+    "block": "M10",
+    "coefficient": 0.39
+  },
+  {
+    "block": "M11",
+    "coefficient": 0.39
+  },
+  {
+    "block": "M12",
+    "coefficient": 0.39
+  },
+  {
+    "block": "M13",
+    "coefficient": 0.39
+  },
+  {
+    "block": "M14",
+    "coefficient": 0.39
+  },
+  {
+    "block": "M15",
+    "coefficient": 0.39
+  },
+  {
+    "block": "M16",
+    "coefficient": 0.78
+  }
+]
+
+const livingComplexes = [
+  {
+    id: '1',
+    complexName: 'Palmas de Canarias',
+    admins: ['1'
+    ],
+    blocks: [
+      {
+        name: 'edif. A',
+        livingSpaces: [
+          { name: 'p1 ap1', coefficient: 0.3
+          },
+          { name: '2', coefficient: 0.1
+          },
+          { name: '3', coefficient: 0.2
+          },
+        ],
+      },
+      {
+        name: 'edif. B',
+        livingSpaces: [
+          { name: '1', coefficient: 0.3
+          },
+          { name: '2', coefficient: 0.1
+          },
+          { name: '3', coefficient: 0.2
+          },
+        ],
+      },
+    ],
+  },
+];
