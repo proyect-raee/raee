@@ -1,1 +1,0 @@
-export { AcceptInvitationPage } from './invitations';
