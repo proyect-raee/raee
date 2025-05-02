@@ -1,3 +1,5 @@
 {
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "i18n-ally.localesPaths": ["client/src/locales"],
+  "cSpell.words": ["Reconectar"]
 }

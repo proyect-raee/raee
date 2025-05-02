@@ -1,0 +1,6 @@
+{
+  "i18n-ally.localesPaths": [
+    "palmas-client/src/locales"
+  ],
+  "git.ignoreLimitWarning": true
+}
